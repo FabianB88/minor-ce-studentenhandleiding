@@ -332,6 +332,46 @@ th, td {
   white-space: nowrap;
 }
 
+.day-schedule {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.slot {
+  display: grid;
+  grid-template-columns: 5.9rem minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: start;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.slot:last-child {
+  border-bottom: none;
+}
+
+.slot-time {
+  color: var(--han-magenta-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.slot-title {
+  min-width: 0;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.slot-title small {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
 th {
   background: var(--bg);
   font-weight: 700;
@@ -692,7 +732,8 @@ a:hover {
   }
 
   table {
-    table-layout: fixed;
+    table-layout: auto;
+    min-width: 760px;
     font-size: 0.72rem;
   }
 
@@ -705,6 +746,15 @@ a:hover {
 
   td small {
     font-size: 0.65rem;
+  }
+
+  .slot {
+    grid-template-columns: 5rem minmax(0, 1fr);
+    gap: 0.45rem;
+  }
+
+  .slot-time {
+    font-size: 0.62rem;
   }
 }
 
