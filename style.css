@@ -175,6 +175,7 @@ body {
   margin-left: var(--sidebar-width);
   min-height: 100vh;
   background: var(--bg);
+  min-width: 0;
 }
 
 .main-header {
@@ -199,6 +200,7 @@ body {
 .main-content {
   padding: 2rem 2.5rem 3rem;
   max-width: 880px;
+  min-width: 0;
 }
 
 /* Typography */
@@ -301,6 +303,8 @@ li strong {
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background: var(--surface);
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 table {
@@ -672,6 +676,22 @@ a:hover {
 
   .download-card .btn {
     justify-content: center;
+  }
+
+  table {
+    table-layout: fixed;
+    font-size: 0.72rem;
+  }
+
+  th,
+  td {
+    padding: 0.55rem 0.4rem;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  td small {
+    font-size: 0.65rem;
   }
 }
 
