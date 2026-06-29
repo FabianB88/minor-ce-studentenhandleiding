@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planning | Minor Circulaire Economie</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .main-content { max-width: 1100px; }
+
+    .planning-table { table-layout: fixed; width: 100%; }
+    .planning-table th:nth-child(1),
+    .planning-table td:nth-child(1) { width: 90px; }
+    .planning-table th:nth-child(4),
+    .planning-table td:nth-child(4) { width: 90px; text-align: center; }
+
+    .slot-deliverable {
+      display: block;
+      margin-top: 0.35rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(229,0,85,0.07);
+      border-left: 2px solid var(--han-magenta);
+      border-radius: 2px;
+      font-size: 0.69rem;
+      color: var(--han-magenta-dark);
+      line-height: 1.45;
+    }
+  </style>
 </head>
 <body>
   <div class="layout">
@@ -45,7 +66,7 @@
 
         <h2>Periode 1</h2>
         <div class="table-wrap">
-          <table>
+          <table class="planning-table">
             <thead>
               <tr><th>Week</th><th>Maandag</th><th>Donderdag</th><th>Fase</th></tr>
             </thead>
@@ -65,7 +86,7 @@
               <tr>
                 <td>Week 38<br><small>14 sep</small></td>
                 <td><div class="day-schedule"><div class="slot"><span class="slot-time">09:45-11:30</span><span class="slot-title">Vaardigheden AI</span></div><div class="slot"><span class="slot-time">13:00-14:30</span><span class="slot-title">AI Challenge &amp; Procescoaching</span></div><div class="slot"><span class="slot-time">15:30-17:00</span><span class="slot-title">Business Ethiek 2</span></div></div></td>
-                <td><div class="day-schedule"><div class="slot"><span class="slot-time">09:45-11:30</span><span class="slot-title">Theorie 4</span></div><div class="slot"><span class="slot-time">12:15-13:45</span><span class="slot-title"><strong>Lowstake</strong><small>In te leveren: aanpakplan afgerond — deconstructie, stakeholdermapping &amp; desk research. Discover-fase deliverable.</small></span></div><div class="slot"><span class="slot-time">14:30-16:15</span><span class="slot-title">Kennismaken opdrachtgever</span></div></div></td>
+                <td><div class="day-schedule"><div class="slot"><span class="slot-time">09:45-11:30</span><span class="slot-title">Theorie 4</span></div><div class="slot"><span class="slot-time">12:15-13:45</span><span class="slot-title"><strong>Lowstake</strong><span class="slot-deliverable">In te leveren: aanpakplan afgerond — deconstructie, stakeholdermapping &amp; desk research. Discover-fase deliverable.</span></span></div><div class="slot"><span class="slot-time">14:30-16:15</span><span class="slot-title">Kennismaken opdrachtgever</span></div></div></td>
                 <td><span class="badge badge-primary">Discover</span></td>
               </tr>
               <tr>
@@ -77,7 +98,7 @@
               <tr>
                 <td>Week 40<br><small>28 sep</small></td>
                 <td><div class="day-schedule"><div class="slot"><span class="slot-time">09:45-11:30</span><span class="slot-title">Vaardigheden AI</span></div><div class="slot"><span class="slot-time">13:00-14:30</span><span class="slot-title">AI Challenge &amp; Procescoaching</span></div><div class="slot"><span class="slot-time">15:30-17:00</span><span class="slot-title">Business Ethiek 4</span></div></div></td>
-                <td><div class="day-schedule"><div class="slot"><span class="slot-time">09:45-11:30</span><span class="slot-title">Theorie 6</span></div><div class="slot"><span class="slot-time">12:15-16:15</span><span class="slot-title"><strong>Lowstake</strong><small>In te leveren: Define-fase afgerond — project paper, ingevulde scrum, kortcyclische voortgang en eerste afronding van 1 projectje.</small></span></div></div></td>
+                <td><div class="day-schedule"><div class="slot"><span class="slot-time">09:45-11:30</span><span class="slot-title">Theorie 6</span></div><div class="slot"><span class="slot-time">12:15-16:15</span><span class="slot-title"><strong>Lowstake</strong><span class="slot-deliverable">In te leveren: Define-fase afgerond — project paper, ingevulde scrum, kortcyclische voortgang en eerste afronding van 1 projectje.</span></span></div></div></td>
                 <td><span class="badge badge-primary">Define</span></td>
               </tr>
               <tr>
@@ -89,7 +110,7 @@
               <tr>
                 <td>Week 42<br><small>12 okt</small></td>
                 <td><div class="day-schedule"><div class="slot"><span class="slot-time">09:45-11:30</span><span class="slot-title">Vaardigheden AI</span></div><div class="slot"><span class="slot-time">13:00-14:30</span><span class="slot-title">AI Challenge &amp; Procescoaching</span></div><div class="slot"><span class="slot-time">15:30-17:00</span><span class="slot-title">Business Ethiek 6</span></div></div></td>
-                <td><div class="day-schedule"><div class="slot"><span class="slot-time">09:45-11:30</span><span class="slot-title"><strong>Lowstake</strong><small>Kortcyclisch opleveren</small></span></div><div class="slot"><span class="slot-time">12:15-16:15</span><span class="slot-title"><strong>Battle</strong><small>Alle docenten aanwezig</small></span></div></div></td>
+                <td><div class="day-schedule"><div class="slot"><span class="slot-time">09:45-11:30</span><span class="slot-title"><strong>Lowstake</strong><span class="slot-deliverable">Kortcyclisch opleveren</span></span></div><div class="slot"><span class="slot-time">12:15-16:15</span><span class="slot-title"><strong>Battle</strong><small>Alle docenten aanwezig</small></span></div></div></td>
                 <td><span class="badge badge-primary">Ideate</span></td>
               </tr>
               <tr>
@@ -116,7 +137,7 @@
 
         <h2>Periode 2</h2>
         <div class="table-wrap">
-          <table>
+          <table class="planning-table">
             <thead>
               <tr><th>Week</th><th>Maandag</th><th>Donderdag</th><th>Fase</th></tr>
             </thead>
