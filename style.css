@@ -721,11 +721,6 @@ a:hover {
   line-height: 1.5;
 }
 
-.download-card h3 .badge {
-  margin-left: 0.5rem;
-  vertical-align: 2px;
-}
-
 .download-card .download-meta {
   margin-top: 0.5rem;
   color: var(--text-light);
@@ -735,18 +730,6 @@ a:hover {
 .download-card .download-meta strong {
   color: var(--text-muted);
   font-weight: 700;
-}
-
-.badge-legend {
-  margin: 1.5rem 0 0;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  line-height: 1.6;
-}
-
-.badge-legend .badge {
-  margin-right: 0.4rem;
-  vertical-align: 1px;
 }
 
 .section-intro {
@@ -763,12 +746,6 @@ a:hover {
 
   .download-card .btn {
     justify-content: center;
-  }
-
-  .download-card h3 .badge {
-    display: block;
-    margin: 0.35rem 0 0;
-    width: fit-content;
   }
 
   table {
