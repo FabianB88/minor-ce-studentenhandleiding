@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planning | Minor Circulaire Economie</title>
+  <title>Planning | Circulaire Economie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css">
   <style>
     .main-content { max-width: 1100px; }
@@ -26,10 +29,10 @@
       margin-top: 0.35rem;
       padding: 0.2rem 0.5rem;
       background: rgba(229,0,85,0.07);
-      border-left: 2px solid var(--han-magenta);
+      border-left: 2px solid var(--accent);
       border-radius: 2px;
       font-size: 0.69rem;
-      color: var(--han-magenta-dark);
+      color: var(--accent-donker);
       line-height: 1.45;
     }
   </style>
@@ -38,7 +41,7 @@
   <div class="layout">
     <div class="sidebar-overlay" onclick="toggleMenu()"></div>
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header"><div class="sidebar-brand"><span class="brand-subtitle">HAN Minor</span><span class="brand-title">Circulaire Economie</span></div></div>
+      <div class="sidebar-header"><div class="sidebar-brand"><span class="brand-title">Circulaire Economie</span></div></div>
       <nav class="sidebar-nav">
         <div class="nav-section">
           <div class="nav-section-title">Start</div>
@@ -48,39 +51,34 @@
         </div>
         <div class="nav-section"><div class="nav-section-title">Bronnen</div><a href="materialen.html" class="nav-link">Materialen</a><a href="learnings.html" class="nav-link">Learnings</a></div>
       </nav>
-      <div class="sidebar-footer">Minor Circulaire Economie<br>HAN University of Applied Sciences</div>
+      <div class="sidebar-footer">Studiemateriaal</div>
     </aside>
     <main class="main">
       <header class="main-header"><button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button><h1 class="page-title">Planning</h1></header>
       <div class="main-content">
-        <p class="lead">Gebruik deze planning als inhoudelijke routekaart voor de contactmomenten. Voor actuele tijden, lokalen en wijzigingen kijk je altijd in het officiele rooster.</p>
-
-        <div class="callout callout-primary">
-          <p><strong>De fase is een focus, geen volgorde.</strong> In de laatste kolom staat per week welke fase
-          dominant is. Dat is waar het zwaartepunt ligt, niet waar je aan vastzit. Je begrip van het probleem en je
-          idee over de oplossing groeien tegelijk, dus je beweegt heen en weer: in Discover mag je al een idee
-          bedenken, een schets maken of een eerste versie bouwen, en in Develop kun je zomaar opnieuw de diepte in
-          moeten met onderzoek.</p>
-          <p>Iets vroeg uitwerken is vaak juist het snelste onderzoek dat er is. Een ruwe mock-up of een half concept
-          maakt je aannames zichtbaar en lokt reacties uit die een gesprek of deskresearch je niet geeft. De vraag van
-          je coach is dan ook niet of je in de juiste fase zit, maar waarom je dit nu doet en wat het je oplevert.</p>
-        </div>
+        <p class="lead">Gebruik deze planning als inhoudelijke routekaart voor de contactmomenten. Voor actuele tijden, lokalen en wijzigingen kijk je altijd in het officiële rooster.</p>
 
         <div class="callout callout-info">
-          <p><strong>Belangrijk:</strong> de blokken hieronder zijn de geplande contactmomenten met inhoudelijke focus. De uren daaromheen op dezelfde onderwijsdag gebruik je als projecturen: werken aan je opdracht, afstemmen met je duo, voorbereiden, uitwerken en feedback verwerken.</p>
-        </div>
-
-        <div class="callout callout-info">
-          <p><strong>Voltijd en deeltijd:</strong> voltijd heeft contactmomenten op maandag en donderdag. Deeltijd sluit op donderdag aan bij dezelfde groep. Alleen de kick-off is ook voor deeltijd op maandag.</p>
+          <p><strong>Praktisch.</strong> De blokken hieronder zijn de contactmomenten; de uren eromheen op
+          dezelfde onderwijsdag zijn projecturen. Voltijd heeft les op maandag en donderdag, deeltijd sluit op
+          donderdag aan bij dezelfde groep &mdash; alleen de kick-off is voor iedereen op maandag. De tijden
+          helpen je plannen, maar het rooster blijft leidend.</p>
         </div>
 
         <div class="callout callout-primary">
-          <p><strong>Voor actuele tijden: zie rooster.</strong> De tijden hieronder helpen je plannen; het rooster blijft leidend voor lokalen en wijzigingen.</p>
+          <p><strong>De fase in de laatste kolom is een zwaartepunt, geen volgorde.</strong> Je begrip van het
+          probleem en je idee over de oplossing groeien tegelijk, dus je beweegt heen en weer: in Discover mag je
+          al iets bouwen, en in Develop kun je opnieuw de diepte in. Je coach vraagt niet of je in de juiste fase
+          zit, maar waarom je dit nu doet.</p>
         </div>
 
-        <div class="callout callout-info">
-          <p><strong>Dominante focus per fase:</strong> in Discover verbreed je je referentiekader, spreek je veel mensen en doe je verdiepend onderzoek. In Define scherp je de richting aan. In Ideate werk je oplossingsrichtingen uit. In Develop maak en test je. In Deliver rond je op, presenteer je en verantwoord je je werk.</p>
-        </div>
+        <ul class="fases">
+          <li><strong>Discover</strong> &mdash; verbreden: veel mensen spreken, verdiepend onderzoek doen</li>
+          <li><strong>Define</strong> &mdash; de richting aanscherpen tot één probleem</li>
+          <li><strong>Ideate</strong> &mdash; oplossingsrichtingen uitwerken</li>
+          <li><strong>Develop</strong> &mdash; maken en testen</li>
+          <li><strong>Deliver</strong> &mdash; opleveren, presenteren en verantwoorden</li>
+        </ul>
 
         <h2>Periode 1</h2>
         <div class="table-wrap">
