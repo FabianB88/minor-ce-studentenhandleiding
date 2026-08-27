@@ -412,13 +412,13 @@ tr:hover td {
   padding: 1rem 1.25rem;
   border-radius: var(--radius);
   margin: 1.5rem 0;
-  border-left: 3px solid;
-  background: var(--surface);
+  background: var(--vlak);
+  border: 1px solid var(--border);
 }
 
 .callout-primary {
-  border-color: var(--accent);
   background: var(--accent-licht);
+  border-color: var(--accent-medium);
 }
 
 .callout-primary strong {
@@ -426,12 +426,12 @@ tr:hover td {
 }
 
 .callout-info {
-  border-color: var(--inkt);
-  background: var(--surface);
+  background: var(--vlak);
+  border-color: var(--border);
 }
 
 .callout-info strong {
-  color: var(--inkt);
+  color: var(--text);
 }
 
 .callout p:last-child {
