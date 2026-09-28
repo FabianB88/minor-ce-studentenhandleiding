@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge Python | Circulaire Economie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <div class="layout">
+    <div class="sidebar-overlay" onclick="toggleMenu()"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="sidebar-brand"><span class="brand-title">Circulaire Economie</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Start</div>
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="planning.html" class="nav-link">Planning</a>
+          <a href="werkwijze.html" class="nav-link">Werkwijze</a>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Bronnen</div><a href="challenge.html" class="nav-link active">Challenge Python</a><a href="materialen.html" class="nav-link">Materialen</a><a href="learnings.html" class="nav-link">Learnings</a></div>
+      </nav>
+      <div class="sidebar-footer">Studiemateriaal</div>
+    </aside>
+    <main class="main">
+      <header class="main-header"><button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button><h1 class="page-title">Challenge Python</h1></header>
+      <div class="main-content">
+        <p class="lead">
+          Van chaos naar dashboard &middot; 28 september 2026. Je hebt een bestand met 240 orders uit januari tot en met april 2026. De data komt uit verschillende bronnen en niemand heeft hem ooit opgeschoond. Het management wil weten hoe de verkoop loopt. Jij bouwt een Python-script dat hier een bruikbaar en betrouwbaar dashboard van maakt.
+        </p>
+
+        <h2 id="bestanden">Bestanden</h2>
+        <p class="section-intro">Begin met deze twee. Bewaar de bestandsnaam van de dataset, dan sluit hij aan op de opdracht.</p>
+        <div class="download-list">
+          <div class="download-card">
+            <div>
+              <h3>Opdracht &middot; Van chaos naar dashboard</h3>
+              <p>Dezelfde opdracht als op deze pagina, als document dat je kunt meenemen en aanvullen.</p>
+            </div>
+            <a class="btn btn-primary" href="downloads/Challenge-Python_Van-chaos-naar-dashboard.docx" download>Download</a>
+          </div>
+          <div class="download-card">
+            <div>
+              <h3>Dataset &middot; dirty_sales_data_240.csv</h3>
+              <p>240 orders, precies zoals ze uit de verschillende bronnen kwamen: losse datumnotaties, dubbele spaties, ontbrekende aantallen en omzetten die niet kloppen.</p>
+            </div>
+            <a class="btn btn-primary" href="downloads/dirty_sales_data_240.csv" download>Download</a>
+          </div>
+        </div>
+
+        <h2 id="lever-op">Lever op</h2>
+        <ul>
+          <li>Eén Python-script dat je van begin tot eind kunt draaien: ruwe CSV erin, schone data en dashboard eruit.</li>
+          <li>Een opgeschoonde versie van de dataset (CSV of Excel).</li>
+          <li>Een dashboard als één bestand (HTML, PNG of PDF) met minimaal vier visualisaties.</li>
+          <li>Een kort datalogboek: welke problemen je vond, wat je ermee deed en waarom.</li>
+        </ul>
+
+        <h2 id="doelen">Doelen</h2>
+
+        <h3>Opschonen</h3>
+        <ul>
+          <li>Elke kolom heeft één consistent formaat en het juiste datatype.</li>
+          <li>Je hebt vastgesteld welke rijen, waarden of kolommen niet te vertrouwen zijn, en je hebt een bewuste keuze gemaakt: repareren, markeren of weglaten.</li>
+          <li>Je controleert of de getallen in de dataset met elkaar kloppen.</li>
+        </ul>
+
+        <h3>Analyseren en sorteren</h3>
+        <ul>
+          <li>Omzet per maand, per regio, per categorie en per verkoper.</li>
+          <li>Een top 5 van klanten en een top 5 van verkopers, gesorteerd op omzet.</li>
+          <li>Inzicht in retouren: hoeveel, bij wie en in welke categorie.</li>
+          <li>Hoeveel procent van de orders je niet volledig kon gebruiken.</li>
+        </ul>
+
+        <h3>Visualiseren</h3>
+        <ul>
+          <li>Een dashboard dat iemand zonder uitleg kan lezen: titels, eenheden en logische kleuren.</li>
+          <li>Minimaal één visualisatie van een ontwikkeling in de tijd.</li>
+          <li>Minimaal één vergelijking tussen groepen.</li>
+        </ul>
+
+        <h3>Concluderen</h3>
+        <ul>
+          <li>Drie conclusies voor het management, onderbouwd met je dashboard.</li>
+          <li>Eén aanbeveling over hoe de data in de toekomst beter vastgelegd kan worden.</li>
+        </ul>
+
+        <h2 id="uitdaging">Uitdaging (optioneel)</h2>
+        <ul>
+          <li>Maak het dashboard interactief, zodat je kunt filteren op regio of maand.</li>
+          <li>Laat je script automatisch een rapport genereren van alle datafouten die het vindt.</li>
+          <li>Zorg dat je script ook werkt als er volgende maand een nieuwe CSV met andere fouten binnenkomt.</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+  <script src="script.js?v=3"></script>
+</body>
+</html>
