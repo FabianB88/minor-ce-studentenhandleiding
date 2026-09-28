@@ -1,0 +1,241 @@
+Order_ID,Order_Date,Customer_Name,Customer_Email,Region,Sales_Rep,Category,Units_Sold,Unit_Price,Total_Revenue
+1001,2026.02.22,Emma Smit,luuk.peters@tech.org, Zuid ,Lars Visser,Meubilair,9.0,12.5,
+1002,23-02-2026,Luuk Peters,daan.m@work.nl,WEST,Mark de Jong,ELEKTRONICA,,899.0,
+1003,2026-01-24,Lisa van Gelder,tim.berg@invalid-email,Oost,lars visser,elektronica,9.0,899.0,8191.0
+1004,2026-02-25,Kees Willems,m.ali@domain.com,Centrum,sanne boer,software,4.0,499.99,1999.96
+1005,26/01/2026,Kees Willems,m.ali@domain.com,WEST,Sophie Hermans,elektronica,15.0,FREE,
+1006,2026-01-27,Jesse Kuijpers,s.hermans@internal.com,Noord,Mark de Jong,Kantoor,14.0,25.0,350.0
+1007,28-02-2026,Anja Meijer,kees.willems@gmail,Noord,Lars Visser,elektronica,8.0,5.0,40.0
+1008,01-01-2026,Anja Meijer,kees.willems@gmail,Oost,sophie hermans,ELEKTRONICA,,499.99,
+1009,02-02-2026,Anja Meijer,kees.willems@gmail,Noord,Lars Visser,kantoor,,350.0,
+1010,"Jan 03, 2026",Jesse Kuijpers,s.hermans@internal.com,Oost,Mark de Jong,Meubilair,12.0,,
+1011,04/02/2026,jan de vries,petra.bakker@outlook..com,NOORD,lars visser,ELEKTRONICA,3.0,499.99,1499.97
+1012,05/02/2026,S. van Dijk,anja.meijer@yahoo.com,Noord,SOPHIE HERMANS,Meubilair,5.0,5.0,25.0
+1013,2026-02-06,Lotte de Bruijn ,lotte.debruijn@gmail.com,Noord,sanne boer,Elektronica,1.0,350.0,350.0
+1014,07/01/2026,Emma Smit,luuk.peters@tech.org, Zuid ,SOPHIE HERMANS,Elektronica,,5.0,
+1015,08-01-2026,jan de vries,petra.bakker@outlook..com,centrum,Mark de Jong,software,7.0,499.99,
+1016,09/02/2026,Lotte de Bruijn ,lotte.debruijn@gmail.com,West,Sanne Boer,Software,5.0,N/B,
+1017,2026.02.10,jan de vries,petra.bakker@outlook..com,NOORD,mark de jong,Software,13.0,FREE,
+1018,2026.01.11,  Petra Bakker  ,s.vandijk@company.nl,Centrum,sanne boer,Software,-2.0,12.5,-25.0
+1019,2026-02-12,Bram Hendriks,milan.bos@freemail.com,Centrum,MARK DE JONG,kantoor,14.0,12.5,275.0
+1020,2026.02.13,Lotte de Bruijn ,lotte.debruijn@gmail.com,zuid,Lars Visser,meubilair,4.0,899.0,3596.0
+1021,"Jan 14, 2026",  Daan Mulder,lisa.vangelder@gmail.com,centrum,SOPHIE HERMANS,elektronica,6.0,899.0,5494.0
+1022,"Jan 15, 2026",Emma Smit,luuk.peters@tech.org,West,Sophie Hermans,Kantoor,1.0,5.0,
+1023,2026.02.16,Kees Willems,m.ali@domain.com,NOORD,Lars Visser,elektronica,8.0,25.0,200.0
+1024,17-02-2026,Mohammed Ali,emma.smit@gmail.com,West,Sanne Boer,software,12.0,899.0,
+1025,18-02-2026,Tim Berg,sanne.dejong@corp.com,zuid,Sophie Hermans,Kantoor,5.0,5.0,
+1026,19-02-2026,Anja Meijer,kees.willems@gmail, oost,sophie hermans,elektronica,11.0,FREE,
+1027,20-01-2026,  Petra Bakker  ,s.vandijk@company.nl, oost,SOPHIE HERMANS,kantoor,-5.0,499.99,-2499.95
+1028,21/02/2026,Emma Smit,luuk.peters@tech.org,West,sophie hermans,Elektronica,4.0,FREE,
+1029,"Feb 22, 2026",Emma Smit,luuk.peters@tech.org,NOORD,mark de jong,Meubilair,9.0,350.0,3150.0
+1030,23/01/2026,Luuk Peters,daan.m@work.nl,centrum,sophie hermans,elektronica,8.0,899.0,7192.0
+1031,"Jan 24, 2026",Tim Berg,sanne.dejong@corp.com,WEST,MARK DE JONG,ELEKTRONICA,14.0,899.0,12686.0
+1032,"Feb 25, 2026",Bram Hendriks,milan.bos@freemail.com,noord,mark de jong,software,-4.0,350.0,-1400.0
+1033,26/01/2026,Jesse Kuijpers,s.hermans@internal.com,NOORD,sophie hermans,Software,12.0,899.0,
+1034,27-01-2026,Kees Willems,m.ali@domain.com,west,mark de jong,software,7.0,899.0,6393.0
+1035,"Feb 28, 2026",Mohammed Ali,emma.smit@gmail.com,zuid,Lars Visser,kantoor,-3.0,12.5,-37.5
+1036,01-02-2026,Kees Willems,m.ali@domain.com,West,Sophie Hermans,Software,10.0,150.0,1500.0
+1037,02-01-2026,  Petra Bakker  ,s.vandijk@company.nl,noord,Sanne Boer,elektronica,,499.99,
+1038,03-02-2026,Lisa van Gelder,tim.berg@invalid-email,noord,SOPHIE HERMANS,software,4.0,150.0,600.0
+1039,2026.01.04, Fleur Post ,noah.evers@design.nl,WEST,Lars Visser,meubilair,12.0,,
+1040,2026.02.05,Luuk Peters,daan.m@work.nl,noord,SOPHIE HERMANS,Kantoor,11.0,5.0,55.0
+1041,06-01-2026,Sanne de Jong,bram.h@services.nl,noord,Sanne Boer,Software,1.0,12.5,112.5
+1042,2026.02.07,Jesse Kuijpers,s.hermans@internal.com,NOORD,MARK DE JONG,elektronica,2.0,899.0,
+1043,2026-02-08,  Petra Bakker  ,s.vandijk@company.nl, oost,MARK DE JONG,Elektronica,2.0,150.0,400.0
+1044,2026.01.09,Jan de Vries,jan.devries@gmail.com,Oost,Mark de Jong,meubilair,-4.0,5.0,-20.0
+1045,"Feb 10, 2026",  Petra Bakker  ,s.vandijk@company.nl,Noord,sanne boer,Software,9.0,25.0,325.0
+1046,"Jan 11, 2026",Milan Bos,fleur.post@gmail.com,Oost,SOPHIE HERMANS,elektronica,9.0,899.0,8191.0
+1047,12-01-2026,Luuk Peters,daan.m@work.nl,zuid,lars visser,Kantoor,-3.0,499.99,-1499.97
+1048,2026-02-13,Mohammed Ali,emma.smit@gmail.com, oost,Sophie Hermans,ELEKTRONICA,,12.5,
+1049,"Feb 14, 2026",Mohammed Ali,emma.smit@gmail.com,centrum,Sanne Boer,Meubilair,11.0,,
+1050,"Jan 15, 2026",Jesse Kuijpers,s.hermans@internal.com,West,sophie hermans,meubilair,13.0,FREE,
+1051,"Jan 16, 2026",S. van Dijk,anja.meijer@yahoo.com,WEST,SOPHIE HERMANS,KANTOOR,4.0,150.0,700.0
+1052,2026.01.17,Mohammed Ali,emma.smit@gmail.com,noord,lars visser,software,1.0,350.0,350.0
+1053,18/01/2026,Emma Smit,luuk.peters@tech.org,Noord,MARK DE JONG,Software,12.0,5.0,60.0
+1054,19/01/2026,Milan Bos,fleur.post@gmail.com,centrum,sanne boer,KANTOOR,12.0,,
+1055,20-01-2026,Bram Hendriks,milan.bos@freemail.com,centrum,lars visser,elektronica,12.0,25.0,400.0
+1056,"Feb 21, 2026",Lisa van Gelder,tim.berg@invalid-email, oost,Sophie Hermans,Meubilair,8.0,499.99,
+1057,2026.01.22, Fleur Post ,noah.evers@design.nl,noord,Lars Visser,Software,8.0,150.0,1200.0
+1058,"Feb 23, 2026",Milan Bos,fleur.post@gmail.com,Oost,mark de jong,Software,,12.5,
+1059,24/01/2026,Jan de Vries,jan.devries@gmail.com,Centrum,sophie hermans,ELEKTRONICA,10.0,350.0,3600.0
+1060,25-02-2026,Tim Berg,sanne.dejong@corp.com,Oost,sophie hermans,software,-2.0,499.99,-999.98
+1061,26-01-2026,Lotte de Bruijn ,lotte.debruijn@gmail.com,noord,sophie hermans,Elektronica,-2.0,499.99,-999.98
+1062,"Feb 27, 2026",Noah Evers,jesse.k@company.com, oost,MARK DE JONG,ELEKTRONICA,5.0,12.5,162.5
+1063,"Feb 28, 2026",  Petra Bakker  ,s.vandijk@company.nl,Centrum,lars visser,KANTOOR,14.0,899.0,12686.0
+1064,2026-01-01,Luuk Peters,daan.m@work.nl,WEST,Lars Visser,Software,1.0,499.99,599.99
+1065,2026-02-02,Luuk Peters,daan.m@work.nl,NOORD,SOPHIE HERMANS,kantoor,14.0,25.0,450.0
+1066,03/01/2026,Anja Meijer,kees.willems@gmail,Noord,Sophie Hermans,KANTOOR,13.0,5.0,165.0
+1067,2026.01.04,  Daan Mulder,lisa.vangelder@gmail.com,west,sophie hermans,kantoor,10.0,350.0,3500.0
+1068,2026-02-05, Fleur Post ,noah.evers@design.nl, oost,Lars Visser,elektronica,,25.0,
+1069,06/01/2026,Kees Willems,m.ali@domain.com,Oost,SOPHIE HERMANS,Meubilair,14.0,FREE,
+1070,07/01/2026,Lotte de Bruijn ,lotte.debruijn@gmail.com,WEST,Sanne Boer,Software,-3.0,150.0,-450.0
+1071,"Feb 08, 2026",Luuk Peters,daan.m@work.nl,zuid,mark de jong,KANTOOR,3.0,499.99,
+1072,2026.01.09,Sanne de Jong,bram.h@services.nl,Oost,Lars Visser,Kantoor,1.0,12.5,112.5
+1073,"Feb 10, 2026",Noah Evers,jesse.k@company.com,Centrum,mark de jong,Software,-1.0,499.99,-499.99
+1074,2026-01-11,Luuk Peters,daan.m@work.nl,centrum,SOPHIE HERMANS,Software,1.0,N/B,
+1075,2026.01.12,Tim Berg,sanne.dejong@corp.com,WEST,lars visser,Elektronica,5.0,350.0,1750.0
+1076,13-01-2026,Luuk Peters,daan.m@work.nl,Oost,sophie hermans,software,2.0,350.0,700.0
+1077,2026.01.14,Mohammed Ali,emma.smit@gmail.com,West,mark de jong,kantoor,10.0,899.0,9090.0
+1078,15/01/2026,Tim Berg,sanne.dejong@corp.com,west,Lars Visser,software,-3.0,25.0,-75.0
+1079,"Feb 16, 2026",Tim Berg,sanne.dejong@corp.com,west,sophie hermans,kantoor,1.0,350.0,450.0
+1080,17-02-2026,Noah Evers,jesse.k@company.com,NOORD,MARK DE JONG,KANTOOR,2.0,5.0,
+1081,18/01/2026,Tim Berg,sanne.dejong@corp.com,Noord,Sanne Boer,ELEKTRONICA,-3.0,899.0,-2697.0
+1082,19-02-2026,  Daan Mulder,lisa.vangelder@gmail.com,noord,MARK DE JONG,software,,25.0,
+1083,2026-01-20,Jan de Vries,jan.devries@gmail.com,zuid,MARK DE JONG,Meubilair,8.0,350.0,2800.0
+1084,2026-02-21,  Daan Mulder,lisa.vangelder@gmail.com, Zuid ,Sanne Boer,Meubilair,5.0,150.0,750.0
+1085,22/01/2026,Noah Evers,jesse.k@company.com,WEST,sanne boer,meubilair,6.0,499.99,2999.94
+1086,23/02/2026,  Petra Bakker  ,s.vandijk@company.nl,centrum,sanne boer,Kantoor,15.0,5.0,
+1087,"Feb 24, 2026",  Petra Bakker  ,s.vandijk@company.nl,Centrum,MARK DE JONG,Elektronica,1.0,,
+1088,25-01-2026,Emma Smit,luuk.peters@tech.org,Centrum,sophie hermans,ELEKTRONICA,4.0,499.99,1999.96
+1089,"Feb 26, 2026",Luuk Peters,daan.m@work.nl,noord,Mark de Jong,Meubilair,-3.0,25.0,-75.0
+1090,"Feb 27, 2026",Jesse Kuijpers,s.hermans@internal.com,WEST,Sanne Boer,kantoor,,899.0,
+1091,28-01-2026,Bram Hendriks,milan.bos@freemail.com,WEST,sophie hermans,kantoor,,12.5,
+1092,01-01-2026,Kees Willems,m.ali@domain.com,Noord,Sanne Boer,Elektronica,6.0,5.0,130.0
+1093,2026.01.02,jan de vries,petra.bakker@outlook..com,Oost,Sanne Boer,Elektronica,,5.0,
+1094,2026.02.03,  Petra Bakker  ,s.vandijk@company.nl,WEST,mark de jong,software,-4.0,150.0,-600.0
+1095,04-01-2026,jan de vries,petra.bakker@outlook..com,WEST,Sanne Boer,software,6.0,499.99,
+1096,2026-01-05,S. van Dijk,anja.meijer@yahoo.com,Noord,SOPHIE HERMANS,meubilair,12.0,5.0,160.0
+1097,2026.02.06,S. van Dijk,anja.meijer@yahoo.com,WEST,Sophie Hermans,meubilair,2.0,499.99,1099.98
+1098,2026-02-07,Emma Smit,luuk.peters@tech.org,centrum,Mark de Jong,Software,10.0,N/B,
+1099,08/01/2026,Lisa van Gelder,tim.berg@invalid-email,west,MARK DE JONG,kantoor,2.0,499.99,1099.98
+1100,09-01-2026,jan de vries,petra.bakker@outlook..com,WEST,mark de jong,Software,-4.0,899.0,-3596.0
+1101,2026-02-10,Mohammed Ali,emma.smit@gmail.com,NOORD,Lars Visser,meubilair,5.0,5.0,125.0
+1102,2026.02.11,Emma Smit,luuk.peters@tech.org,west,Sanne Boer,kantoor,,5.0,
+1103,2026-01-12,Sanne de Jong,bram.h@services.nl,centrum,Mark de Jong,elektronica,10.0,25.0,250.0
+1104,2026-02-13,Bram Hendriks,milan.bos@freemail.com,zuid,Mark de Jong,Kantoor,9.0,350.0,3150.0
+1105,"Jan 14, 2026", Fleur Post ,noah.evers@design.nl,noord,Sophie Hermans,KANTOOR,6.0,,
+1106,15-01-2026,  Daan Mulder,lisa.vangelder@gmail.com,noord,Sanne Boer,elektronica,4.0,FREE,
+1107,2026-02-16,Sanne de Jong,bram.h@services.nl,Noord,Lars Visser,Kantoor,,899.0,
+1108,17-01-2026,jan de vries,petra.bakker@outlook..com,centrum,Sophie Hermans,Software,,5.0,
+1109,"Jan 18, 2026",Bram Hendriks,milan.bos@freemail.com,noord,Sophie Hermans,Elektronica,5.0,FREE,
+1110,"Feb 19, 2026",Kees Willems,m.ali@domain.com,Centrum,sanne boer,kantoor,7.0,25.0,
+1111,"Jan 20, 2026",Noah Evers,jesse.k@company.com,WEST,Sophie Hermans,Kantoor,,25.0,
+1112,2026-02-21, Fleur Post ,noah.evers@design.nl,noord,mark de jong,Meubilair,13.0,499.99,
+1113,2026.02.22,  Daan Mulder,lisa.vangelder@gmail.com, Zuid ,Sophie Hermans,ELEKTRONICA,-5.0,150.0,-750.0
+1114,23/01/2026,  Daan Mulder,lisa.vangelder@gmail.com,west,lars visser,kantoor,8.0,5.0,140.0
+1115,24/02/2026,S. van Dijk,anja.meijer@yahoo.com,west,Lars Visser,Software,-1.0,499.99,-499.99
+1116,25/01/2026,Jesse Kuijpers,s.hermans@internal.com,NOORD,Mark de Jong,elektronica,13.0,150.0,1950.0
+1117,2026-02-26,Mohammed Ali,emma.smit@gmail.com,West,Lars Visser,meubilair,-4.0,899.0,-3596.0
+1118,2026.01.27,Noah Evers,jesse.k@company.com, Zuid ,sanne boer,meubilair,6.0,150.0,900.0
+1119,2026.01.28,Lisa van Gelder,tim.berg@invalid-email,WEST,sophie hermans,elektronica,,12.5,
+1120,2026-01-01,Milan Bos,fleur.post@gmail.com,Centrum,Sanne Boer,KANTOOR,-2.0,150.0,-300.0
+1121,2026.03.02,Milan Bos,fleur.post@gmail.com,WEST,MARK DE JONG,Meubilair,7,350.0,2550.0
+1122,03-04-2026,S. van Dijk,anja.meijer@yahoo.com,Oost,mark de jong,kantoor,5,499.99,2599.95
+1123,2026-03-04,Mohammed Ali,emma.smit@gmail.com,West,Sophie Hermans,elektronica,4,5.0,
+1124,2026.03.05,Anja Meijer,kees.willems@gmail, Zuid ,SOPHIE HERMANS,ELEKTRONICA,14,499.99,7099.86
+1125,06-03-2026,Sanne de Jong,bram.h@services.nl,WEST,Sanne Boer,elektronica,7,5.0,
+1126,2026.03.07,S. van Dijk,anja.meijer@yahoo.com,NOORD,Mark de Jong,software,13,FREE,
+1127,08-03-2026,Kees Willems,m.ali@domain.com,Noord,Sophie Hermans,meubilair,15,25.0,
+1128,09/04/2026,Anja Meijer,kees.willems@gmail, oost,Sanne Boer,Kantoor,-5,150.0,-750.0
+1129,10-04-2026,  Daan Mulder,lisa.vangelder@gmail.com,centrum,sanne boer,ELEKTRONICA,-5,25.0,-125.0
+1130,2026-04-11, Fleur Post ,noah.evers@design.nl,west,Mark de Jong,kantoor,,25.0,
+1131,"Mar 12, 2026",Emma Smit,luuk.peters@tech.org,centrum,Lars Visser,Software,15,499.99,
+1132,"Apr 13, 2026",Luuk Peters,daan.m@work.nl,NOORD,Mark de Jong,software,3,350.0,
+1133,2026-03-14,Luuk Peters,daan.m@work.nl,centrum,mark de jong,Kantoor,15,899.0,
+1134,15-03-2026,  Daan Mulder,lisa.vangelder@gmail.com,Oost,sanne boer,Elektronica,12,5.0,160.0
+1135,"Apr 16, 2026",Tim Berg,sanne.dejong@corp.com,West,lars visser,Kantoor,8,12.5,200.0
+1136,17-03-2026,Noah Evers,jesse.k@company.com,noord,sanne boer,Elektronica,12,499.99,5999.88
+1137,18/03/2026,Sanne de Jong,bram.h@services.nl,Centrum,MARK DE JONG,software,8,25.0,300.0
+1138,19-04-2026,jan de vries,petra.bakker@outlook..com,centrum,lars visser,KANTOOR,8,5.0,40.0
+1139,2026-03-20,Mohammed Ali,emma.smit@gmail.com, Zuid ,MARK DE JONG,kantoor,4,150.0,600.0
+1140,21/03/2026,S. van Dijk,anja.meijer@yahoo.com,zuid,mark de jong,Meubilair,7,899.0,6293.0
+1141,2026.04.22,Milan Bos,fleur.post@gmail.com,West,lars visser,Software,10,899.0,8990.0
+1142,"Mar 23, 2026",Bram Hendriks,milan.bos@freemail.com,NOORD,Sophie Hermans,Meubilair,5,899.0,4495.0
+1143,24/04/2026,Luuk Peters,daan.m@work.nl,centrum,mark de jong,Elektronica,7,12.5,87.5
+1144,"Mar 25, 2026",Jan de Vries,jan.devries@gmail.com,zuid,sophie hermans,Kantoor,9,5.0,45.0
+1145,"Mar 26, 2026",Emma Smit,luuk.peters@tech.org,west,Mark de Jong,kantoor,11,350.0,3850.0
+1146,2026-03-27,  Petra Bakker  ,s.vandijk@company.nl, oost,SOPHIE HERMANS,ELEKTRONICA,1,499.99,599.99
+1147,2026.03.28,  Petra Bakker  ,s.vandijk@company.nl,Noord,sanne boer,ELEKTRONICA,9,5.0,
+1148,2026.03.01,Kees Willems,m.ali@domain.com,centrum,Mark de Jong,Kantoor,9,350.0,3250.0
+1149,02/04/2026,Kees Willems,m.ali@domain.com,west,Lars Visser,meubilair,15,150.0,2250.0
+1150,2026.03.03,Lotte de Bruijn ,lotte.debruijn@gmail.com,Oost,sophie hermans,kantoor,11,499.99,5599.89
+1151,2026.03.04,Bram Hendriks,milan.bos@freemail.com, oost,sanne boer,Software,5,25.0,125.0
+1152,2026.03.05,S. van Dijk,anja.meijer@yahoo.com, oost,sanne boer,Elektronica,13,499.99,6499.87
+1153,2026.04.06,Bram Hendriks,milan.bos@freemail.com,centrum,SOPHIE HERMANS,kantoor,15,12.5,187.5
+1154,2026.04.07,Bram Hendriks,milan.bos@freemail.com,Noord,sanne boer,KANTOOR,12,N/B,
+1155,"Mar 08, 2026",S. van Dijk,anja.meijer@yahoo.com,Oost,sanne boer,KANTOOR,9,5.0,45.0
+1156,"Apr 09, 2026",Anja Meijer,kees.willems@gmail,NOORD,SOPHIE HERMANS,software,15,N/B,
+1157,2026.04.10,Lisa van Gelder,tim.berg@invalid-email,noord,lars visser,elektronica,13,25.0,325.0
+1158,2026-04-11,Emma Smit,luuk.peters@tech.org,Noord,Mark de Jong,Elektronica,-1,12.5,-12.5
+1159,2026.03.12, Fleur Post ,noah.evers@design.nl,Centrum,Mark de Jong,meubilair,,899.0,
+1160,13-03-2026, Fleur Post ,noah.evers@design.nl,Noord,Sanne Boer,software,,12.5,
+1161,14-04-2026,Noah Evers,jesse.k@company.com,noord,MARK DE JONG,Kantoor,-4,25.0,-100.0
+1162,2026-03-15,S. van Dijk,anja.meijer@yahoo.com, Zuid ,SOPHIE HERMANS,ELEKTRONICA,5,25.0,125.0
+1163,16/03/2026,  Daan Mulder,lisa.vangelder@gmail.com,zuid,lars visser,software,2,350.0,700.0
+1164,2026.03.17,Lisa van Gelder,tim.berg@invalid-email, oost,sanne boer,KANTOOR,7,25.0,175.0
+1165,18/03/2026,  Petra Bakker  ,s.vandijk@company.nl,West,sanne boer,Elektronica,,350.0,
+1166,19/03/2026,Milan Bos,fleur.post@gmail.com,Noord,Sophie Hermans,Software,12,499.99,5999.88
+1167,"Apr 20, 2026",jan de vries,petra.bakker@outlook..com,Oost,lars visser,ELEKTRONICA,8,12.5,100.0
+1168,2026-03-21,Bram Hendriks,milan.bos@freemail.com,west,MARK DE JONG,Elektronica,4,NULL,
+1169,"Mar 22, 2026",Mohammed Ali,emma.smit@gmail.com,zuid,Lars Visser,Meubilair,,350.0,
+1170,"Mar 23, 2026",Emma Smit,luuk.peters@tech.org,Oost,MARK DE JONG,Kantoor,2,499.99,1099.98
+1171,2026-04-24,S. van Dijk,anja.meijer@yahoo.com,NOORD,sanne boer,meubilair,,150.0,
+1172,25-04-2026,Emma Smit,luuk.peters@tech.org,west,Mark de Jong,meubilair,1,350.0,
+1173,"Mar 26, 2026", Fleur Post ,noah.evers@design.nl, oost,Mark de Jong,kantoor,,12.5,
+1174,"Mar 27, 2026",Lotte de Bruijn ,lotte.debruijn@gmail.com,WEST,sanne boer,software,5,5.0,125.0
+1175,28-04-2026,Sanne de Jong,bram.h@services.nl,West,SOPHIE HERMANS,KANTOOR,3,25.0,75.0
+1176,2026-04-01, Fleur Post ,noah.evers@design.nl,west,sanne boer,Meubilair,8,5.0,40.0
+1177,02/03/2026,Noah Evers,jesse.k@company.com, Zuid ,MARK DE JONG,kantoor,1,12.5,12.5
+1178,"Apr 03, 2026",Luuk Peters,daan.m@work.nl,WEST,Sophie Hermans,ELEKTRONICA,1,NULL,
+1179,2026.04.04,Tim Berg,sanne.dejong@corp.com,centrum,SOPHIE HERMANS,kantoor,-5,350.0,-1750.0
+1180,2026.03.05,Tim Berg,sanne.dejong@corp.com,zuid,Sophie Hermans,Meubilair,1,NULL,
+1181,06/03/2026,Jesse Kuijpers,s.hermans@internal.com,centrum,mark de jong,elektronica,15,499.99,7599.85
+1182,2026.04.07,Jesse Kuijpers,s.hermans@internal.com,zuid,Sanne Boer,Kantoor,11,NULL,
+1183,2026.03.08,  Petra Bakker  ,s.vandijk@company.nl,noord,lars visser,software,4,25.0,200.0
+1184,09-04-2026,  Petra Bakker  ,s.vandijk@company.nl,West,sanne boer,KANTOOR,1,,
+1185,2026-04-10,Bram Hendriks,milan.bos@freemail.com,NOORD,sanne boer,Meubilair,13,150.0,
+1186,"Apr 11, 2026",  Petra Bakker  ,s.vandijk@company.nl,WEST,SOPHIE HERMANS,Kantoor,,499.99,
+1187,2026.04.12,  Daan Mulder,lisa.vangelder@gmail.com, Zuid ,lars visser,meubilair,9,25.0,325.0
+1188,2026.03.13, Fleur Post ,noah.evers@design.nl,NOORD,Sophie Hermans,elektronica,1,,
+1189,14/03/2026,Lotte de Bruijn ,lotte.debruijn@gmail.com, Zuid ,MARK DE JONG,Elektronica,14,499.99,
+1190,2026.03.15,Bram Hendriks,milan.bos@freemail.com,zuid,sophie hermans,Software,7,499.99,
+1191,16/04/2026,Lotte de Bruijn ,lotte.debruijn@gmail.com,centrum,lars visser,kantoor,-2,899.0,-1798.0
+1192,2026-03-17,Noah Evers,jesse.k@company.com,centrum,Mark de Jong,Kantoor,-4,499.99,-1999.96
+1193,18-03-2026,Jan de Vries,jan.devries@gmail.com,noord,mark de jong,Elektronica,5,499.99,2599.95
+1194,"Mar 19, 2026",Noah Evers,jesse.k@company.com,centrum,MARK DE JONG,software,13,NULL,
+1195,2026-04-20,Tim Berg,sanne.dejong@corp.com,west,sophie hermans,kantoor,14,,
+1196,2026-03-21,  Daan Mulder,lisa.vangelder@gmail.com,Oost,Mark de Jong,ELEKTRONICA,12,5.0,
+1197,2026.04.22,Bram Hendriks,milan.bos@freemail.com,zuid,lars visser,KANTOOR,10,499.99,5099.9
+1198,"Apr 23, 2026",Tim Berg,sanne.dejong@corp.com,zuid,Mark de Jong,kantoor,9,,
+1199,24-03-2026,Kees Willems,m.ali@domain.com,zuid,Mark de Jong,Kantoor,9,12.5,212.5
+1200,2026.04.25,Tim Berg,sanne.dejong@corp.com,Noord,SOPHIE HERMANS,software,14,150.0,2200.0
+1201,2026-04-26,Emma Smit,luuk.peters@tech.org, oost,sophie hermans,Software,-3,5.0,-15.0
+1202,2026-04-27,Lisa van Gelder,tim.berg@invalid-email,zuid,mark de jong,KANTOOR,8,350.0,2900.0
+1203,28-04-2026,Emma Smit,luuk.peters@tech.org, Zuid ,Sophie Hermans,ELEKTRONICA,8,499.99,3999.92
+1204,2026.04.01,Anja Meijer,kees.willems@gmail,west,SOPHIE HERMANS,KANTOOR,4,25.0,200.0
+1205,"Apr 02, 2026",Emma Smit,luuk.peters@tech.org,centrum,sophie hermans,elektronica,5,499.99,
+1206,03-04-2026,Lotte de Bruijn ,lotte.debruijn@gmail.com,zuid,sanne boer,ELEKTRONICA,7,5.0,35.0
+1207,"Apr 04, 2026",Sanne de Jong,bram.h@services.nl,Oost,Lars Visser,meubilair,9,350.0,
+1208,05/04/2026,Jan de Vries,jan.devries@gmail.com,centrum,Sanne Boer,Meubilair,6,150.0,1000.0
+1209,"Apr 06, 2026",Luuk Peters,daan.m@work.nl,West,SOPHIE HERMANS,Meubilair,3,899.0,2697.0
+1210,2026.03.07,S. van Dijk,anja.meijer@yahoo.com,noord,lars visser,KANTOOR,1,150.0,150.0
+1211,08-04-2026,Jesse Kuijpers,s.hermans@internal.com,WEST,lars visser,software,,12.5,
+1212,09/03/2026,Lisa van Gelder,tim.berg@invalid-email,WEST,lars visser,meubilair,5,899.0,
+1213,10-04-2026,Lotte de Bruijn ,lotte.debruijn@gmail.com,Noord,sanne boer,KANTOOR,12,12.5,150.0
+1214,2026.04.11,Lotte de Bruijn ,lotte.debruijn@gmail.com,noord,SOPHIE HERMANS,Kantoor,-5,12.5,-62.5
+1215,12-04-2026,S. van Dijk,anja.meijer@yahoo.com,Oost,mark de jong,kantoor,,5.0,
+1216,13-04-2026,S. van Dijk,anja.meijer@yahoo.com,zuid,Mark de Jong,software,,12.5,
+1217,2026.03.14,jan de vries,petra.bakker@outlook..com,centrum,Lars Visser,Kantoor,11,25.0,375.0
+1218,15-04-2026,Jesse Kuijpers,s.hermans@internal.com,West,sophie hermans,meubilair,15,12.5,187.5
+1219,2026.04.16, Fleur Post ,noah.evers@design.nl, oost,sophie hermans,Elektronica,9,,
+1220,"Apr 17, 2026",Jan de Vries,jan.devries@gmail.com,noord,sophie hermans,KANTOOR,14,499.99,7099.86
+1221,2026-03-18,Kees Willems,m.ali@domain.com,west,MARK DE JONG,software,4,350.0,1400.0
+1222,19/03/2026,Anja Meijer,kees.willems@gmail,Centrum,Sanne Boer,Kantoor,-1,350.0,-350.0
+1223,"Apr 20, 2026",Lotte de Bruijn ,lotte.debruijn@gmail.com,zuid,sanne boer,Elektronica,7,25.0,175.0
+1224,"Apr 21, 2026",Lisa van Gelder,tim.berg@invalid-email,Noord,SOPHIE HERMANS,Meubilair,9,25.0,225.0
+1225,"Apr 22, 2026",Lisa van Gelder,tim.berg@invalid-email, Zuid ,SOPHIE HERMANS,elektronica,-5,150.0,-750.0
+1226,2026.04.23,Sanne de Jong,bram.h@services.nl,noord,Mark de Jong,Kantoor,,25.0,
+1227,24-04-2026,Luuk Peters,daan.m@work.nl,Oost,Sanne Boer,Software,-4,150.0,-600.0
+1228,2026-03-25,Kees Willems,m.ali@domain.com,noord,sanne boer,Kantoor,,899.0,
+1229,2026-03-26,  Daan Mulder,lisa.vangelder@gmail.com,Oost,lars visser,Elektronica,1,5.0,105.0
+1230,2026-04-27,Emma Smit,luuk.peters@tech.org,centrum,Sophie Hermans,meubilair,8,12.5,100.0
+1231,2026-03-28, Fleur Post ,noah.evers@design.nl,NOORD,Lars Visser,meubilair,7,,
+1232,"Apr 01, 2026",Luuk Peters,daan.m@work.nl,Centrum,lars visser,kantoor,,350.0,
+1233,02-03-2026,S. van Dijk,anja.meijer@yahoo.com,Oost,Sophie Hermans,kantoor,9,5.0,145.0
+1234,2026-03-03,Lisa van Gelder,tim.berg@invalid-email, Zuid ,Mark de Jong,software,8,N/B,
+1235,"Mar 04, 2026",Tim Berg,sanne.dejong@corp.com, oost,SOPHIE HERMANS,kantoor,6,12.5,75.0
+1236,2026.03.05, Fleur Post ,noah.evers@design.nl,Noord,sanne boer,meubilair,,12.5,
+1237,2026.04.06,Jan de Vries,jan.devries@gmail.com,Centrum,Lars Visser,Elektronica,-3,12.5,-37.5
+1238,2026.03.07,S. van Dijk,anja.meijer@yahoo.com,centrum,sanne boer,meubilair,14,5.0,
+1239,"Apr 08, 2026",Emma Smit,luuk.peters@tech.org,Noord,Sanne Boer,kantoor,-5,350.0,-1750.0
+1240,2026-03-09,Bram Hendriks,milan.bos@freemail.com,NOORD,sophie hermans,Elektronica,-4,12.5,-50.0
