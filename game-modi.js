@@ -4,7 +4,7 @@
   const G = window.LGame, MODI = window.LG_MODI;
   const { el, icoon, ikonen, shuffle, meld, fmtGeld } = G;
   const $ = (s, r) => (r || document).querySelector(s);
-  const niveauVoor = (i) => (i < 3 ? 1 : i < 7 ? 2 : 3);     // vraag 1-3, 4-7, 8-10
+  const niveauVoor = (i) => Math.min(5, 1 + Math.floor(i / 2));     // vraag 1-2 niveau 1 … vraag 9-10 niveau 5
   const goedTekst = (ctx) => { const g = ctx.antwoorden.filter(a => a.goed).length; return g === 1 ? '1 goed antwoord' : `${g} goede antwoorden`; };
 
   /* ───────── 1 tegen 100 ───────── */
@@ -27,7 +27,7 @@
         const had = 100 - ctx.over;
         return { einde: true, tekst: had ? `Fout, en daarmee is je stand van ${had} weg. De overgebleven tegenstanders winnen deze ronde.` : 'Meteen bij de eerste vraag mis. Nog een keer?' };
       }
-      const basis = q.n === 1 ? 0.22 : q.n === 2 ? 0.38 : 0.55;
+      const basis = [0.2, 0.3, 0.4, 0.5, 0.6][q.n - 1];
       let k = Math.round(ctx.over * (basis + (Math.random() * 0.14 - 0.07)));
       k = Math.max(1, Math.min(ctx.over, k));
       if (ctx.antwoorden.length >= 10) k = ctx.over;
@@ -83,7 +83,7 @@
         knop('publiek', 'bar-chart-3', 'Vraag het publiek', () => {
           // Het publiek heeft het meestal, maar niet altijd, bij het rechte eind; bij diepere vragen twijfelt het meer.
           const q = ctx.vraag, open = [...document.querySelectorAll('.lg-optie:not(.weg)')];
-          const juistPct = Math.round((q.n === 1 ? 62 : q.n === 2 ? 50 : 41) + Math.random() * 16);
+          const juistPct = Math.round([64, 56, 48, 42, 36][q.n - 1] + Math.random() * 16);
           let rest = 100 - juistPct; const verdeling = {};
           const anderen = shuffle(open.filter(b => Number(b.dataset.oi) !== q.j));
           anderen.forEach((b, i) => { const p = i === anderen.length - 1 ? rest : Math.round(rest * (0.3 + Math.random() * 0.5)); verdeling[b.dataset.oi] = Math.max(0, Math.min(rest, p)); rest -= verdeling[b.dataset.oi]; });

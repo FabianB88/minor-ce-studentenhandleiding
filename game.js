@@ -20,6 +20,7 @@
   const LETTERS = 'ABCDEFGH';
   const CAT = Object.fromEntries(window.CATEGORIEEN.map(c => [c.key, c]));
   const AANTAL = 10;
+  const NIVEAUS = ['kernbegrip', 'mechanisme', 'toepassing', 'verbanden', 'oordeel'];
   const bewegingArm = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function meld(tekst) {
@@ -64,12 +65,14 @@
     if (uur < 0.25) w *= 0.15; else if (uur < 6) w *= 0.5; // net gezien: even niet
     return Math.max(0.2, w);
   }
+  /* Niveau kiezen: vooral het hoogste vrijgespeelde niveau, met wat herhaling van lagere niveaus */
   function kiesNiveau(cat) {
     const open = LG.Stats.niveau(cat);
     const r = Math.random();
     if (open === 1) return 1;
-    if (open === 2) return r < 0.7 ? 2 : 1;
-    return r < 0.6 ? 3 : (r < 0.85 ? 2 : 1);
+    if (r < 0.6) return open;
+    if (r < 0.85) return open - 1;
+    return Math.max(1, open - 2);
   }
   function kiesVraag(pool, ctx, niveau) {
     const stats = LG.Stats.alles();
@@ -139,7 +142,7 @@
     omschrijving: 'Twintig vragen zonder tussentijdse feedback, net als straks. Uitleg krijg je pas aan het eind.',
     scoreLabel: 'goed van 20', max: 20, limiet: 60, geenFeedback: true,
     startHulp: 'Twintig vragen uit beide e-learnings, een minuut per vraag. Aan het eind zie je je cijfer en alle uitleg.',
-    kies(ctx) { return Promise.resolve(kiesStandaard(ctx, { type: 'alles' }, ctx.antwoorden.length < 7 ? 1 : ctx.antwoorden.length < 14 ? 2 : 3)); },
+    kies(ctx) { return Promise.resolve(kiesStandaard(ctx, { type: 'alles' }, Math.min(5, 1 + Math.floor(ctx.antwoorden.length / 4)))); },
     klaar(ctx) { return ctx.antwoorden.length >= 20; },
     score(ctx) { return ctx.antwoorden.filter(a => a.goed).length; },
     uitslagTekst(ctx) { const g = ctx.antwoorden.filter(a => a.goed).length; const cijfer = Math.max(1, Math.round((1 + 9 * g / 20) * 10) / 10); return `Cijfer ${String(cijfer).replace('.', ',')}: ${g} van de 20 goed in ${fmtTijd(ctx.tijd)}.`; }
@@ -152,8 +155,8 @@
     init(ctx) {
       const dag = LG.vandaag(); const rnd = seedRnd('lg-' + dag);
       const cats = shuffle(window.CATEGORIEEN.map(c => c.key), rnd).slice(0, 5);
-      const niveaus = shuffle([1, 1, 2, 2, 3], rnd);
-      ctx.rij = cats.map((cat, i) => { const pool = VRAGEN.filter(q => q.cat === cat && q.n === niveaus[i]); return pool[Math.floor(rnd() * pool.length)]; });
+      const niveaus = shuffle([1, 2, 3, 4, 5], rnd);
+      ctx.rij = cats.map((cat, i) => { const pool = VRAGEN.filter(q => q.cat === cat && q.n === niveaus[i]); return pool[Math.floor(rnd() * pool.length)] || VRAGEN.find(q => q.cat === cat); });
       ctx.dag = dag; ctx.teltNiet = LG.Stats.dagGespeeld(dag);
       if (ctx.teltNiet) meld('Je hebt vandaag al meegedaan; deze ronde telt niet voor het scorebord.');
     },
@@ -217,7 +220,7 @@
     balk.append(links);
     if (q) {
       const c = CAT[q.cat];
-      const niv = el('span', { class: 'lg-niveau', title: `niveau ${q.n} van 3` }, [1, 2, 3].map(l => el('i', { class: l <= q.n ? 'aan' : '' })));
+      const niv = el('span', { class: 'lg-niveau', title: `niveau ${q.n} van 5: ${NIVEAUS[q.n - 1]}` }, [1, 2, 3, 4, 5].map(l => el('i', { class: l <= q.n ? 'aan' : '' })));
       balk.append(el('span', { class: 'lg-cat ' + c.cursus }, c.naam, niv));
     }
     balk.append(el('button', { class: 'lg-knop-link', type: 'button', onclick: () => { if (confirm('Ronde afbreken? Je score wordt niet opgeslagen.')) { stopTimer(ctx); toonMenu(); } } }, 'Stoppen'));
@@ -619,9 +622,9 @@
     window.CATEGORIEEN.forEach(c => {
       const niv = LG.Stats.niveau(c.key), b = LG.Stats.beheersing(c.key);
       const pct = b.gezien ? Math.round(100 * b.goed / b.gezien) : 0;
-      const titel = !b.gezien ? 'nog niet geoefend' : `${b.goed} van ${b.gezien} goed` + (b.gezien >= 6 ? ` (${pct}%)` : '') + ` · niveau ${niv} van 3 vrijgespeeld`;
+      const titel = !b.gezien ? 'nog niet geoefend' : `${b.goed} van ${b.gezien} goed` + (b.gezien >= 6 ? ` (${pct}%)` : '') + ` · niveau ${niv} van 5 vrijgespeeld (${NIVEAUS[niv - 1]})`;
       lijst.append(el('div', { class: 'lg-vg-rij', title: titel },
-        el('span', {}, c.naam), el('span', { class: 'lg-vg-pct' }, b.gezien ? `${b.goed}/${b.gezien}` : '–'), el('span', { class: 'lg-niveau', 'aria-label': `niveau ${niv} van 3` }, [1, 2, 3].map(l => el('i', { class: l <= niv ? 'aan' : '' })))));
+        el('span', {}, c.naam), el('span', { class: 'lg-vg-pct' }, b.gezien ? `${b.goed}/${b.gezien}` : '–'), el('span', { class: 'lg-niveau', 'aria-label': `niveau ${niv} van 5` }, [1, 2, 3, 4, 5].map(l => el('i', { class: l <= niv ? 'aan' : '' })))));
     });
     wrap.append(lijst);
   }
@@ -633,5 +636,5 @@
     if (LG.Scores.luister) LG.Scores.luister(() => renderScorebord());
   });
 
-  window.LGame = { start, toonMenu, toonVraag, einde, volgende, spelbalk, stappen, startTimer, stopTimer, kiesVraag, kiesStandaard, kiesNiveau, poolVoorFilter, el, icoon, ikonen, shuffle, meld, fmtTijd, fmtGeld, wacht, beantwoord, confetti, renderSpeler, CAT, AANTAL };
+  window.LGame = { NIVEAUS, start, toonMenu, toonVraag, einde, volgende, spelbalk, stappen, startTimer, stopTimer, kiesVraag, kiesStandaard, kiesNiveau, poolVoorFilter, el, icoon, ikonen, shuffle, meld, fmtTijd, fmtGeld, wacht, beantwoord, confetti, renderSpeler, CAT, AANTAL };
 })();

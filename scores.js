@@ -64,13 +64,13 @@
       const volgende = LEVELS[i + 1];
       return { nr: i + 1, titel: LEVELS[i].titel, xp, van: LEVELS[i].xp, tot: volgende ? volgende.xp : null, volgende: volgende ? volgende.titel : null };
     },
-    /* Niveau dat in een categorie is vrijgespeeld: 1, 2 of 3.
+    /* Niveau dat in een categorie is vrijgespeeld: 1 tot en met 5.
        Een niveau gaat open na 3 goede antwoorden op het huidige niveau met minstens 60% goed. */
     niveau(cat) {
       const c = this.alles().cat[cat];
       if (!c) return 1;
       let n = 1;
-      for (let lvl = 1; lvl < 3; lvl++) {
+      for (let lvl = 1; lvl < 5; lvl++) {
         const x = c[lvl] || { g: 0, f: 0 };
         const tot = x.g + x.f;
         if (x.g >= 3 && tot > 0 && x.g / tot >= 0.6) n = lvl + 1; else break;
@@ -81,7 +81,7 @@
       const c = this.alles().cat[cat];
       if (!c) return { gezien: 0, goed: 0 };
       let g = 0, f = 0;
-      [1, 2, 3].forEach(l => { const x = c[l] || { g: 0, f: 0 }; g += x.g; f += x.f; });
+      [1, 2, 3, 4, 5].forEach(l => { const x = c[l] || { g: 0, f: 0 }; g += x.g; f += x.f; });
       return { gezien: g + f, goed: g };
     },
     /* Vragen waar je moeite mee had: vaker fout dan goed, of de laatste keer fout */
