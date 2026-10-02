@@ -619,8 +619,9 @@
     window.CATEGORIEEN.forEach(c => {
       const niv = LG.Stats.niveau(c.key), b = LG.Stats.beheersing(c.key);
       const pct = b.gezien ? Math.round(100 * b.goed / b.gezien) : 0;
-      lijst.append(el('div', { class: 'lg-vg-rij', title: b.gezien ? `${b.goed} van ${b.gezien} goed` : 'nog niet geoefend' },
-        el('span', {}, c.naam), el('span', { class: 'lg-vg-pct' }, b.gezien ? `${pct}%` : '–'), el('span', { class: 'lg-niveau', 'aria-label': `niveau ${niv} van 3` }, [1, 2, 3].map(l => el('i', { class: l <= niv ? 'aan' : '' })))));
+      const titel = !b.gezien ? 'nog niet geoefend' : `${b.goed} van ${b.gezien} goed` + (b.gezien >= 6 ? ` (${pct}%)` : '') + ` · niveau ${niv} van 3 vrijgespeeld`;
+      lijst.append(el('div', { class: 'lg-vg-rij', title: titel },
+        el('span', {}, c.naam), el('span', { class: 'lg-vg-pct' }, b.gezien ? `${b.goed}/${b.gezien}` : '–'), el('span', { class: 'lg-niveau', 'aria-label': `niveau ${niv} van 3` }, [1, 2, 3].map(l => el('i', { class: l <= niv ? 'aan' : '' })))));
     });
     wrap.append(lijst);
   }
