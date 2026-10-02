@@ -7,15 +7,16 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /learninggame_scores/{doc} {
       allow read: if true;
-      allow create: if request.resource.data.keys().hasOnly(['naam', 'modus', 'score', 'tijd', 'max', 'datum'])
+      allow create: if request.resource.data.keys().hasOnly(['naam', 'modus', 'score', 'tijd', 'max', 'datum', 'dag'])
+        && (!('dag' in request.resource.data) || (request.resource.data.dag is string && request.resource.data.dag.size() == 10))
         && request.resource.data.naam is string
         && request.resource.data.naam.size() >= 1 && request.resource.data.naam.size() <= 24
-        && request.resource.data.modus in ['sprint', 'schijf', 'honderd', 'miljonair', 'lingo']
+        && request.resource.data.modus in ['sprint', 'schijf', 'herhaling', 'tentamen', 'dag', 'honderd', 'miljonair', 'lingo']
         && request.resource.data.score is int && request.resource.data.score >= 0 && request.resource.data.score <= 100
         && request.resource.data.tijd is int && request.resource.data.tijd >= 0 && request.resource.data.tijd <= 7200
         && request.resource.data.max is int && request.resource.data.max >= 1 && request.resource.data.max <= 100
         && request.resource.data.datum == request.time;
       allow update, delete: if false;
     }
-  }
+
 }

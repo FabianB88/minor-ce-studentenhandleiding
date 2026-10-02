@@ -230,3 +230,98 @@ dialog::backdrop { background: rgba(28, 23, 19, .35); }
 @media (prefers-reduced-motion: reduce) {
   .lg-schijf svg, .lg-tegel, .lg-melding, .lg-honderd i { transition: none !important; animation: none !important; }
 }
+
+/* ───────── Uitbreiding: speelsere laag ───────── */
+.lg-groep { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 1.1rem 0 0.5rem; font-weight: 700; }
+.lg-modi { margin: 0 0 0.5rem; }
+.lg-modus { position: relative; overflow: hidden; }
+.lg-modus::after { content: ''; position: absolute; right: -28px; top: -28px; width: 84px; height: 84px; border-radius: 50%; background: var(--m-licht); opacity: 0.7; transition: transform 0.25s; }
+.lg-modus:hover::after { transform: scale(1.25); }
+.lg-modus .lg-modus-icoon { position: relative; z-index: 1; background: var(--m-licht); color: var(--m-donker); }
+.lg-modus[aria-pressed="true"] { border-color: var(--m-donker); background: var(--m-licht); }
+.lg-modus[aria-pressed="true"] .lg-modus-icoon { background: var(--m-donker); color: #fff; }
+.lg-modus.kleur-groen { --m-licht: #EDF3EC; --m-donker: #5C7A5A; }
+.lg-modus.kleur-zand { --m-licht: #F6F0E8; --m-donker: #9C7650; }
+.lg-modus.kleur-koel { --m-licht: #EAEEF3; --m-donker: #5F7489; }
+.lg-modus.kleur-goud { --m-licht: #F7EFDD; --m-donker: #8A6A2E; }
+.lg-modus.kleur-donker { --m-licht: #EFEBE5; --m-donker: #3A332E; }
+.lg-knop-groot { padding: 0.9rem 1.5rem; font-size: 0.98rem; box-shadow: 0 6px 16px rgba(92, 122, 90, 0.25); }
+.lg-knop-groot:hover { transform: translateY(-1px); }
+
+/* Spelerkaart: level, XP en streak */
+.lg-xp { height: 8px; background: var(--vlak); border-radius: 4px; overflow: hidden; margin: 0.6rem 0 0.4rem; }
+.lg-xp > i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), #7A9578); border-radius: 4px; transition: width 0.6s ease; }
+.lg-speler-meta { display: grid; gap: 0.25rem; font-size: 0.76rem; color: var(--text-muted); }
+.lg-speler-meta span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.lg-speler-meta svg.lucide { width: 14px; height: 14px; color: var(--warm); }
+.lg-streak.aan { color: var(--warm); font-weight: 600; }
+.lg-streak.aan svg.lucide { color: #C0392B; }
+.lg-reeksbadge { display: inline-flex; align-items: center; gap: 0.25rem; margin-left: 0.5rem; padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--warm-licht); color: var(--warm); font-weight: 700; font-size: 0.72rem; animation: lgpop 0.3s ease; }
+.lg-reeksbadge svg.lucide { width: 12px; height: 12px; color: #C0392B; }
+.lg-balk-links { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0.2rem; }
+
+/* Scorebord: keuzelijst en podiumkleuren */
+.lg-scores-kop select { width: 100%; padding: 0.5rem 0.7rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); font-size: 0.85rem; color: var(--text); font-weight: 500; }
+.lg-plek.p2 { background: #E4DDD6; color: var(--tekst-donker); }
+.lg-plek.p3 { background: #F6F0E8; color: var(--warm); }
+.lg-vg-rij { grid-template-columns: 1fr auto auto; }
+.lg-vg-pct { font-size: 0.72rem; color: var(--text-muted); min-width: 2.2em; text-align: right; }
+
+/* Antwoordanimaties */
+.lg-optie.pop { animation: lgpop 0.35s ease; }
+.lg-optie.schud { animation: lgschud 0.4s; }
+.lg-optie.spanning { border-color: var(--warm); background: var(--warm-licht); animation: lgpuls 0.75s ease-in-out infinite; }
+.lg-optie.spanning .lg-letter { background: var(--warm); color: #fff; }
+@keyframes lgpop { 50% { transform: scale(1.03); } }
+@keyframes lgschud { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+@keyframes lgpuls { 50% { box-shadow: 0 0 0 6px rgba(181, 145, 106, 0.18); } }
+.lg-stappen i { transition: background 0.3s; }
+.lg-stappen i.nu { animation: lgpuls2 1.2s ease-in-out infinite; }
+@keyframes lgpuls2 { 50% { opacity: 0.45; } }
+.lg-schijf-uitslag.pop { animation: lgpop 0.4s ease; }
+.lg-fb-extra { font-weight: 600; }
+.lg-uitslag-icoon.top { background: #F7EFDD; color: #8A6A2E; animation: lgpop 0.6s ease; }
+.lg-confetti { position: fixed; inset: 0; pointer-events: none; z-index: 300; }
+
+/* 1 tegen 100: tegenstanders als poppetjes */
+.lg-honderd i { border-radius: 50% 50% 35% 35%; background: linear-gradient(180deg, #7A8FA6 0 45%, #5F7489 45%); position: relative; }
+.lg-honderd i.af { background: var(--border-zacht); transform: scale(0.55); opacity: 0.7; }
+
+/* Miljonair: geldladder en hulplijnen */
+.lg-milj { display: grid; grid-template-columns: minmax(0, 1fr) 180px; gap: 1rem; align-items: start; margin-bottom: 0.75rem; }
+@media (max-width: 720px) { .lg-milj { grid-template-columns: 1fr; } .lg-ladder { flex-direction: row; flex-wrap: wrap; } .lg-ladder li { flex: 1 1 30%; } }
+.lg-ladder { display: flex; flex-direction: column; gap: 2px; list-style: none; margin: 0; padding: 0; }
+.lg-ladder li { font-size: 0.74rem; padding: 0.28rem 0.55rem; border-radius: 6px; color: var(--text-muted); background: var(--vlak); display: flex; gap: 0.4rem; align-items: center; }
+.lg-ladder li .lg-trede-nr { width: 1.4em; font-weight: 700; color: var(--text-light); }
+.lg-ladder li span:nth-child(2) { flex: 1; }
+.lg-ladder li.veilig { color: var(--tekst-donker); font-weight: 600; background: #F7EFDD; }
+.lg-ladder li.gehaald { background: var(--accent-licht); color: var(--accent-donker); }
+.lg-ladder li.gehaald .lg-trede-nr { color: var(--accent); }
+.lg-ladder li.nu { background: #8A6A2E; color: #fff; font-weight: 700; }
+.lg-ladder li.nu .lg-trede-nr { color: #fff; }
+.lg-ladder li svg.lucide { width: 12px; height: 12px; }
+.lg-milj-bedrag { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.6rem; font-size: 0.8rem; color: var(--text-muted); }
+.lg-milj-bedrag strong { font-size: 1.25rem; color: #8A6A2E; letter-spacing: -0.01em; }
+.lg-hulplijnen { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.lg-hulplijn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.75rem; border-radius: 999px; border: 1px solid #E6D9BF; background: #F7EFDD; color: #8A6A2E; font-size: 0.78rem; font-weight: 600; }
+.lg-hulplijn:hover:not(:disabled) { background: #8A6A2E; color: #fff; border-color: #8A6A2E; }
+.lg-hulplijn:disabled { opacity: 0.4; cursor: not-allowed; text-decoration: line-through; }
+.lg-publiek { display: flex; gap: 0.75rem; align-items: flex-end; height: 90px; margin-top: 0.4rem; }
+.lg-publiek-kolom { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 0.25rem; height: 100%; flex: 1; max-width: 70px; }
+.lg-publiek-kolom i { display: block; width: 100%; background: linear-gradient(180deg, #B5916A, #9C7650); border-radius: 4px 4px 0 0; animation: lggroei 0.6s ease-out; transform-origin: bottom; }
+.lg-publiek-kolom span { font-size: 0.72rem; font-weight: 700; color: var(--tekst-donker); }
+@keyframes lggroei { from { transform: scaleY(0); } }
+
+/* Flitskaarten */
+.lg-flits { display: grid; justify-items: center; margin: 0.5rem 0 1rem; perspective: 1200px; }
+.lg-flitskaart { width: min(520px, 100%); min-height: 230px; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+.lg-flitskaart-binnen { position: relative; width: 100%; min-height: 230px; transition: transform 0.6s; transform-style: preserve-3d; }
+.lg-flitskaart.gedraaid .lg-flitskaart-binnen { transform: rotateY(180deg); }
+.lg-kaart-zijde { position: absolute; inset: 0; backface-visibility: hidden; display: grid; align-content: center; justify-items: center; gap: 0.6rem; padding: 1.5rem; border-radius: var(--radius); background: linear-gradient(160deg, #F6F0E8, #FFFFFF); border: 1px solid var(--border); box-shadow: var(--shadow-lg); text-align: center; }
+.lg-kaart-zijde.achter { transform: rotateY(180deg); background: linear-gradient(160deg, #EDF3EC, #FFFFFF); }
+.lg-kaart-zijde small { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; }
+.lg-kaart-zijde > span { font-size: 0.85rem; color: var(--text-muted); }
+.lg-kaart-term { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; color: var(--inkt); }
+.lg-kaart-def { font-size: 1rem; font-weight: 500; color: var(--text); line-height: 1.5; max-width: 420px; }
+.lg-flits-acties { justify-content: center; }
+@media (prefers-reduced-motion: reduce) { .lg-flitskaart-binnen { transition: none; } .lg-optie, .lg-stappen i, .lg-reeksbadge, .lg-publiek-kolom i { animation: none !important; } }

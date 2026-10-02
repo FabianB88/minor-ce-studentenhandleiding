@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css?v=3">
-  <link rel="stylesheet" href="game.css?v=1">
+  <link rel="stylesheet" href="game.css?v=2">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -31,7 +31,7 @@
       <header class="main-header"><button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button><h1 class="page-title">Learning game</h1></header>
       <div class="main-content lg-content">
         <p class="lead">
-          Oefen de stof van de twee curriculum-e-learnings op een speelse manier. Elke ronde is tien vragen; je score is het aantal goed, en bij een gelijke stand telt je tijd. Na een fout krijg je meteen de uitleg uit de e-learning, na een goed antwoord kun je de verdieping openen.
+          Oefen de stof van de twee curriculum-e-learnings op een speelse manier: in korte rondes, met uitleg uit de e-learning na elke fout en verdieping na elk goed antwoord. Je verdient XP, speelt per onderwerp diepere niveaus vrij en strijdt om het scorebord.
         </p>
 
         <div class="lg-indeling">
@@ -41,7 +41,7 @@
             <div class="lg-kaart lg-scores">
               <div class="lg-scores-kop">
                 <h2><i data-lucide="trophy"></i> Scorebord</h2>
-                <div class="lg-tabs" role="tablist" id="scoreTabs"></div>
+                <select id="scoreKeuze" aria-label="Spelvorm van het scorebord"></select>
               </div>
               <div id="scorebord"></div>
             </div>
@@ -64,13 +64,10 @@
       <button type="button" class="lg-knop-icoon" data-sluit aria-label="Sluiten"><i data-lucide="x"></i></button>
     </div>
     <div class="lg-dlg-inhoud">
-      <p>Alle spelvormen putten uit dezelfde vragenbank van ruim 130 vragen over de e-learnings <em>Duurzaamheid, circulariteit en systeemdenken</em> en <em>Business Ethics</em>. Vragen die je fout had komen vaker terug; vragen die je al beheerst minder vaak.</p>
-      <p><strong>Sprint</strong> is de basis: tien gemengde vragen op tijd, uit alles of uit één onderwerp dat je zelf kiest.</p>
-      <p><strong>De schijf</strong> kiest per vraag een onderwerp. Hoe meer je goed hebt in een onderwerp, hoe dieper de vragen worden: van kernbegrip naar mechanisme naar toepassing.</p>
-      <p><strong>1 tegen 100</strong>: je speelt tegen honderd denkbeeldige tegenstanders. Bij elk goed antwoord vallen de tegenstanders af die het fout hadden. Eén fout en de ronde is voorbij.</p>
-      <p><strong>Miljonair</strong>: tien treden met oplopende moeilijkheid en drie hulplijnen. Fout op een hoge trede? Dan val je terug naar trede vijf.</p>
-      <p><strong>Lingo</strong>: raad het kernbegrip bij de omschrijving. Na elke poging zie je welke letters goed staan en krijg je een extra letter.</p>
-      <p>De klok loopt alleen terwijl je antwoordt; de uitleg lezen kost geen tijd. Neem die dus rustig door, daar leer je het meest van.</p>
+      <p>Alle spelvormen putten uit dezelfde vragenbank van ruim 130 vragen over de e-learnings <em>Duurzaamheid, circulariteit en systeemdenken</em> en <em>Business Ethics</em>. Vragen die je fout had komen vaker terug; vragen die je al beheerst minder vaak. Per onderwerp speel je drie niveaus vrij: kernbegrip, mechanisme, toepassing.</p>
+      <p><strong>Oefenen.</strong> <em>Sprint</em> is tien gemengde vragen op tijd, uit alles of één onderwerp. <em>De schijf</em> draait het onderwerp en gaat dieper naarmate je het beheerst. <em>Herhaling</em> geeft eerst je fouten en dan wat je nog niet zag. <em>Tentamen</em> is twintig vragen zonder tussentijdse feedback, met een cijfer en alle uitleg aan het eind. <em>Dagelijkse 5</em> zijn elke dag dezelfde vijf vragen voor iedereen; alleen je eerste poging telt. <em>Flitskaarten</em> zijn begrippen die je zelf beoordeelt, zonder tijd of score.</p>
+      <p><strong>Spelshows.</strong> <em>1 tegen 100</em>: elk goed antwoord schakelt tegenstanders uit, en na elke vraag kies je tussen doorgaan of je stand meenemen; één fout en alles is weg. <em>Miljonair</em>: tien treden naar een miljoen, trede 5 is veilig, drie hulplijnen, en na elke trede mag je stoppen. <em>Lingo</em>: raad het kernbegrip bij de omschrijving.</p>
+      <p>De klok loopt alleen terwijl je antwoordt; de uitleg lezen kost geen tijd. Elke vraag levert XP op (meer bij diepere niveaus, en ook een beetje bij een fout, want dan heb je de uitleg gelezen). Elke dag spelen houdt je reeks in stand.</p>
     </div>
   </dialog>
 
@@ -78,9 +75,9 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
   <script src="game-config.js?v=1"></script>
   <script src="vragen.js?v=1"></script>
-  <script src="scores.js?v=1"></script>
-  <script src="game.js?v=1"></script>
-  <script src="game-modi.js?v=1"></script>
+  <script src="scores.js?v=2"></script>
+  <script src="game.js?v=2"></script>
+  <script src="game-modi.js?v=2"></script>
   <script src="script.js?v=3"></script>
 </body>
 </html>

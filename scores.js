@@ -1,5 +1,5 @@
 /* Opslag van scores en voortgang voor de learning game.
-   - Voortgang (welke vragen goed/fout, niveaus per categorie) staat altijd lokaal in de browser.
+   - Voortgang (welke vragen goed/fout, niveaus per categorie, XP, dagstreak) staat lokaal in de browser.
    - Highscores staan lokaal, of gedeeld in Firestore zodra window.LG_FIREBASE is ingevuld
      (zie game-config.js). Zonder config werkt alles lokaal.
 */
@@ -12,6 +12,7 @@
     try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fallback; } catch (e) { return fallback; }
   }
   function schrijf(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  const vandaag = () => new Date().toISOString().slice(0, 10);
 
   /* ── Naam ── */
   const Naam = {
@@ -19,9 +20,16 @@
     set(n) { schrijf(LS_NAAM, n); }
   };
 
-  /* ── Leerstatistiek per vraag (voor adaptieve selectie) ── */
+  /* ── Levels: XP-drempels en titels uit de stof ── */
+  const LEVELS = [
+    { xp: 0, titel: 'Starter' }, { xp: 120, titel: 'Verkenner' }, { xp: 320, titel: 'Kringloopdenker' },
+    { xp: 640, titel: 'Systeemdenker' }, { xp: 1100, titel: 'Strateeg' }, { xp: 1700, titel: 'Transitiemaker' },
+    { xp: 2500, titel: 'Regeneratief' }
+  ];
+
+  /* ── Leerstatistiek per vraag (voor adaptieve selectie), XP en streak ── */
   const Stats = {
-    alles() { return lees(LS_STATS, { vragen: {}, cat: {} }); },
+    alles() { const s = lees(LS_STATS, {}); s.vragen = s.vragen || {}; s.cat = s.cat || {}; s.xp = s.xp || 0; s.dagen = s.dagen || []; return s; },
     noteer(q, goed) {
       const s = this.alles();
       const v = s.vragen[q.id] || { g: 0, f: 0, laatst: 0 };
@@ -32,7 +40,29 @@
       c[q.n] = c[q.n] || { g: 0, f: 0 };
       if (goed) c[q.n].g++; else c[q.n].f++;
       s.cat[q.cat] = c;
+      s.xp += goed ? 8 * (q.n || 1) : 2;              // ook een fout levert iets op: je hebt de uitleg gelezen
       schrijf(LS_STATS, s);
+    },
+    /* Een afgeronde ronde telt voor de dagstreak */
+    ronde() {
+      const s = this.alles(); const d = vandaag();
+      if (!s.dagen.includes(d)) { s.dagen.push(d); s.dagen = s.dagen.slice(-400); }
+      s.xp += 15;
+      schrijf(LS_STATS, s);
+    },
+    streak() {
+      const dagen = new Set(this.alles().dagen);
+      let n = 0; const d = new Date();
+      if (!dagen.has(d.toISOString().slice(0, 10))) d.setDate(d.getDate() - 1);   // vandaag nog niet gespeeld: gisteren telt nog
+      while (dagen.has(d.toISOString().slice(0, 10))) { n++; d.setDate(d.getDate() - 1); }
+      return n;
+    },
+    xp() { return this.alles().xp; },
+    level() {
+      const xp = this.xp(); let i = 0;
+      while (i + 1 < LEVELS.length && xp >= LEVELS[i + 1].xp) i++;
+      const volgende = LEVELS[i + 1];
+      return { nr: i + 1, titel: LEVELS[i].titel, xp, van: LEVELS[i].xp, tot: volgende ? volgende.xp : null, volgende: volgende ? volgende.titel : null };
     },
     /* Niveau dat in een categorie is vrijgespeeld: 1, 2 of 3.
        Een niveau gaat open na 3 goede antwoorden op het huidige niveau met minstens 60% goed. */
@@ -54,7 +84,15 @@
       [1, 2, 3].forEach(l => { const x = c[l] || { g: 0, f: 0 }; g += x.g; f += x.f; });
       return { gezien: g + f, goed: g };
     },
-    reset() { schrijf(LS_STATS, { vragen: {}, cat: {} }); }
+    /* Vragen waar je moeite mee had: vaker fout dan goed, of de laatste keer fout */
+    zwak() {
+      const v = this.alles().vragen;
+      return Object.keys(v).filter(id => v[id].f > 0 && v[id].f >= v[id].g);
+    },
+    gezien(id) { return !!this.alles().vragen[id]; },
+    dagGespeeld(dag) { return !!lees('lg_dag_' + dag, false); },
+    markeerDag(dag) { schrijf('lg_dag_' + dag, true); },
+    reset() { schrijf(LS_STATS, {}); }
   };
 
   /* ── Scores: lokale implementatie ── */
@@ -65,8 +103,8 @@
       alle.push(entry);
       schrijf(LS_SCORES, alle.slice(-500));
     },
-    async top(modus, n) {
-      return sorteer(lees(LS_SCORES, []).filter(s => s.modus === modus)).slice(0, n);
+    async top(modus, n, dag) {
+      return sorteer(lees(LS_SCORES, []).filter(s => s.modus === modus && (!dag || s.dag === dag))).slice(0, n);
     },
     luister() { return () => {}; }
   };
@@ -83,14 +121,15 @@
     return {
       type: 'firestore',
       async voeg(entry) {
-        await col.add({
-          naam: entry.naam, modus: entry.modus, score: entry.score, tijd: entry.tijd,
-          max: entry.max, datum: firebase.firestore.FieldValue.serverTimestamp()
-        });
+        const doc = { naam: entry.naam, modus: entry.modus, score: entry.score, tijd: entry.tijd, max: entry.max, datum: firebase.firestore.FieldValue.serverTimestamp() };
+        if (entry.dag) doc.dag = entry.dag;
+        await col.add(doc);
       },
-      async top(modus, n) {
-        // Alleen een gelijkheidsfilter: dan is geen samengestelde index nodig. Sorteren doen we zelf.
-        const snap = await col.where('modus', '==', modus).limit(1000).get();
+      async top(modus, n, dag) {
+        // Alleen gelijkheidsfilters: dan is geen samengestelde index nodig. Sorteren doen we zelf.
+        let q = col.where('modus', '==', modus);
+        if (dag) q = q.where('dag', '==', dag);
+        const snap = await q.limit(1000).get();
         const lijst = snap.docs.map(d => { const x = d.data(); return { ...x, datum: x.datum && x.datum.toMillis ? x.datum.toMillis() : 0 }; });
         return sorteer(lijst).slice(0, n);
       },
@@ -105,5 +144,5 @@
     try { backend = maakFirestore(window.LG_FIREBASE); } catch (e) { console.warn('Firestore niet beschikbaar, lokaal verder', e); }
   }
 
-  window.LG = { Naam, Stats, Scores: backend };
+  window.LG = { Naam, Stats, Scores: backend, LEVELS, vandaag };
 })();
