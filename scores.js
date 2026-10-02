@@ -89,8 +89,10 @@
         });
       },
       async top(modus, n) {
-        const snap = await col.where('modus', '==', modus).orderBy('score', 'desc').orderBy('tijd', 'asc').limit(n).get();
-        return snap.docs.map(d => { const x = d.data(); return { ...x, datum: x.datum && x.datum.toMillis ? x.datum.toMillis() : 0 }; });
+        // Alleen een gelijkheidsfilter: dan is geen samengestelde index nodig. Sorteren doen we zelf.
+        const snap = await col.where('modus', '==', modus).limit(1000).get();
+        const lijst = snap.docs.map(d => { const x = d.data(); return { ...x, datum: x.datum && x.datum.toMillis ? x.datum.toMillis() : 0 }; });
+        return sorteer(lijst).slice(0, n);
       },
       luister(cb) {
         return col.orderBy('datum', 'desc').limit(1).onSnapshot(() => cb(), () => {});
