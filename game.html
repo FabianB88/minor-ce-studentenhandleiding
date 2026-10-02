@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning game | Circulaire Economie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="game.css?v=1">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="layout">
+    <div class="sidebar-overlay" onclick="toggleMenu()"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="sidebar-brand"><span class="brand-title">Circulaire Economie</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Start</div>
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="planning.html" class="nav-link">Planning</a>
+          <a href="werkwijze.html" class="nav-link">Werkwijze</a>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Bronnen</div><a href="challenge.html" class="nav-link">Challenge Python</a><a href="materialen.html" class="nav-link">Materialen</a><a href="learnings.html" class="nav-link">Learnings</a><a href="game.html" class="nav-link active">Learning game</a></div>
+      </nav>
+      <div class="sidebar-footer">Studiemateriaal</div>
+    </aside>
+    <main class="main">
+      <header class="main-header"><button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button><h1 class="page-title">Learning game</h1></header>
+      <div class="main-content lg-content">
+        <p class="lead">
+          Oefen de stof van de twee curriculum-e-learnings op een speelse manier. Elke ronde is tien vragen; je score is het aantal goed, en bij een gelijke stand telt je tijd. Na een fout krijg je meteen de uitleg uit de e-learning, na een goed antwoord kun je de verdieping openen.
+        </p>
+
+        <div class="lg-indeling">
+          <section class="lg-speelveld" id="speelveld" aria-live="polite"></section>
+          <aside class="lg-zij">
+            <div class="lg-kaart lg-speler" id="spelerkaart"></div>
+            <div class="lg-kaart lg-scores">
+              <div class="lg-scores-kop">
+                <h2><i data-lucide="trophy"></i> Scorebord</h2>
+                <div class="lg-tabs" role="tablist" id="scoreTabs"></div>
+              </div>
+              <div id="scorebord"></div>
+            </div>
+            <div class="lg-kaart lg-voortgang">
+              <h2><i data-lucide="layers"></i> Jouw diepgang</h2>
+              <p class="lg-hulp">Per onderwerp speel je niveaus vrij: eerst de kernbegrippen, dan de mechanismen, dan toepassing. Dit wordt in deze browser bijgehouden.</p>
+              <div id="voortgang"></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="melding" class="lg-melding" role="status" aria-live="polite"></div>
+
+  <dialog id="uitlegDialog" aria-labelledby="uitlegTitel">
+    <div class="lg-dlg-kop">
+      <h2 id="uitlegTitel">Zo werkt het</h2>
+      <button type="button" class="lg-knop-icoon" data-sluit aria-label="Sluiten"><i data-lucide="x"></i></button>
+    </div>
+    <div class="lg-dlg-inhoud">
+      <p>Alle spelvormen putten uit dezelfde vragenbank van ruim 130 vragen over de e-learnings <em>Duurzaamheid, circulariteit en systeemdenken</em> en <em>Business Ethics</em>. Vragen die je fout had komen vaker terug; vragen die je al beheerst minder vaak.</p>
+      <p><strong>Sprint</strong> is de basis: tien gemengde vragen op tijd, uit alles of uit één onderwerp dat je zelf kiest.</p>
+      <p><strong>De schijf</strong> kiest per vraag een onderwerp. Hoe meer je goed hebt in een onderwerp, hoe dieper de vragen worden: van kernbegrip naar mechanisme naar toepassing.</p>
+      <p><strong>1 tegen 100</strong>: je speelt tegen honderd denkbeeldige tegenstanders. Bij elk goed antwoord vallen de tegenstanders af die het fout hadden. Eén fout en de ronde is voorbij.</p>
+      <p><strong>Miljonair</strong>: tien treden met oplopende moeilijkheid en drie hulplijnen. Fout op een hoge trede? Dan val je terug naar trede vijf.</p>
+      <p><strong>Lingo</strong>: raad het kernbegrip bij de omschrijving. Na elke poging zie je welke letters goed staan en krijg je een extra letter.</p>
+      <p>De klok loopt alleen terwijl je antwoordt; de uitleg lezen kost geen tijd. Neem die dus rustig door, daar leer je het meest van.</p>
+    </div>
+  </dialog>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="game-config.js?v=1"></script>
+  <script src="vragen.js?v=1"></script>
+  <script src="scores.js?v=1"></script>
+  <script src="game.js?v=1"></script>
+  <script src="game-modi.js?v=1"></script>
+  <script src="script.js?v=3"></script>
+</body>
+</html>
