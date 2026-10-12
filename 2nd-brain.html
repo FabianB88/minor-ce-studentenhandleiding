@@ -48,66 +48,81 @@
       <header class="main-header"><button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button><h1 class="page-title">Challenge 2nd brain</h1></header>
       <div class="main-content">
         <p class="lead">
-          Bouw je eigen AI second brain. Je geeft de prompt hieronder aan een AI-assistent en die interviewt je over wat je weet, hoe je werkt en hoe je beslissingen neemt. Wat je antwoordt wordt vastgelegd in een set Markdown-bestanden die je in latere gesprekken weer aan een AI kunt meegeven.
+          Bouw je eigen AI second brain in twee stappen. Eerst laat je een AI je interviewen, zodat je kennis, werkwijze en keuzes in een set Markdown-bestanden komen. Daarna zet je een tweede prompt in waarmee een AI aan de hand van die bestanden voor je aan het werk gaat. Beide prompts kun je kopiëren of als bestand downloaden.
         </p>
 
-        <h2 id="prompt">De prompt</h2>
-        <p class="section-intro">Kopieer de prompt of download hem als bestand. Het is dezelfde tekst.</p>
-        <div class="download-list">
-          <div class="download-card">
-            <div>
-              <h3>2nd brain prompt</h3>
-              <p>Deep Knowledge Interviewer &amp; Memory Architect. Werkt in Claude, ChatGPT en vergelijkbare AI-assistenten, met stem of tekst.</p>
-              <div class="prompt-acties">
-                <button type="button" class="btn btn-outline" id="kopieer-knop">Kopieer prompt</button>
-                <span class="prompt-status" id="kopieer-status" role="status" aria-live="polite"></span>
+        <h2 id="bouwen">Stap 1 &middot; Bouw je second brain</h2>
+        <p class="section-intro">Dit is de interviewprompt. Hij werkt in Claude, ChatGPT en vergelijkbare AI-assistenten, met stem of tekst.</p>
+        <section class="prompt-blok" data-bron="downloads/2nd-brain-prompt.md">
+          <div class="download-list">
+            <div class="download-card">
+              <div>
+                <h3>2nd brain prompt</h3>
+                <p>Deep Knowledge Interviewer &amp; Memory Architect. Interviewt je over wat je weet, hoe je werkt en hoe je beslissingen neemt, en legt dat vast in drie lagen: bevestigde kennis, je eigen woorden en aparte hypotheses.</p>
+                <div class="prompt-acties">
+                  <button type="button" class="btn btn-outline js-kopieer">Kopieer prompt</button>
+                  <span class="prompt-status js-status" role="status" aria-live="polite"></span>
+                </div>
               </div>
+              <a class="btn btn-primary" href="downloads/2nd-brain-prompt.md" download="2nd brain prompt.md">Download</a>
             </div>
-            <a class="btn btn-primary" href="downloads/2nd-brain-prompt.md" download="2nd brain prompt.md">Download</a>
           </div>
-        </div>
+          <details class="prompt-voorbeeld">
+            <summary>Lees de volledige prompt</summary>
+            <pre class="js-tekst">De prompt wordt geladen...</pre>
+          </details>
+        </section>
 
-        <h2 id="gebruik">Zo gebruik je hem</h2>
+        <h3>Zo gebruik je hem</h3>
         <ol>
           <li>Open een nieuw gesprek in de AI-assistent die je wilt gebruiken.</li>
           <li>Plak de prompt als eerste bericht en verstuur hem.</li>
           <li>De AI vraagt in welke taal je wilt werken en begint daarna met je studie- of werkcontext. Je beantwoordt één vraag per keer.</li>
           <li>Je mag vragen overslaan, een interpretatie corrigeren of pauzeren en later verdergaan.</li>
-          <li>Laat de AI de bestanden aanmaken, of de inhoud geven zodat je ze zelf opslaat. Bewaar ze op een plek die je zelf beheert.</li>
+          <li>Laat de AI de bestanden aanmaken, of de inhoud geven zodat je ze zelf opslaat. Bewaar ze in een map <code>AI-Second-Brain</code> op een plek die je zelf beheert.</li>
+        </ol>
+
+        <h2 id="inzetten">Stap 2 &middot; Zet je second brain aan het werk</h2>
+        <p class="section-intro">Dit is de utilization prompt. Hij is bedoeld voor een omgeving die bij je bestanden kan en zelf taken kan uitvoeren: Claude Cowork, ChatGPT in werk- of agentmodus, Codex of Claude Code.</p>
+        <section class="prompt-blok" data-bron="downloads/2nd-brain-utilization-prompt.md">
+          <div class="download-list">
+            <div class="download-card">
+              <div>
+                <h3>2nd brain utilization prompt</h3>
+                <p>Autonomous Knowledge Operator. Leest je second brain, zoekt zelf nuttig werk, voert dat uit, houdt een backlog bij en legt vast wat er gedaan is.</p>
+                <div class="prompt-acties">
+                  <button type="button" class="btn btn-outline js-kopieer">Kopieer prompt</button>
+                  <span class="prompt-status js-status" role="status" aria-live="polite"></span>
+                </div>
+              </div>
+              <a class="btn btn-primary" href="downloads/2nd-brain-utilization-prompt.md" download="2nd brain utilization prompt.md">Download</a>
+            </div>
+          </div>
+          <details class="prompt-voorbeeld">
+            <summary>Lees de volledige prompt</summary>
+            <pre class="js-tekst">De prompt wordt geladen...</pre>
+          </details>
+        </section>
+
+        <h3>Zo gebruik je hem</h3>
+        <ol>
+          <li>Open de tool en geef hem toegang tot je map <code>AI-Second-Brain</code>. Zonder toegang tot de bestanden kan de AI niets uit je second brain lezen.</li>
+          <li>Plak de prompt als eerste bericht en verstuur hem.</li>
+          <li>De AI leest je second brain, kiest een eerste nuttige taak en rapporteert wat hij heeft gedaan en wat hij voorstelt.</li>
+          <li>Stuur daarna aan met korte opdrachten, zoals "Wat kan ik nu doen?", "Do research", "Work autonomously" of "Stop".</li>
+          <li>De AI houdt in <code>05_OPERATIONS</code> een backlog en een logboek bij, zodat je in een volgende sessie kunt verdergaan.</li>
         </ol>
 
         <div class="callout callout-primary">
-          <p><strong>Let op:</strong> een AI onthoudt de bestanden pas in een volgend gesprek als je ze weer meegeeft of koppelt. Deel geen wachtwoorden en anonimiseer vertrouwelijke informatie van opdrachtgevers voordat je die deelt.</p>
+          <p><strong>Let op:</strong> een AI onthoudt de bestanden pas in een volgend gesprek als je ze weer meegeeft of koppelt. Deel geen wachtwoorden en anonimiseer vertrouwelijke informatie van opdrachtgevers voordat je die deelt. De utilization prompt vraagt toestemming voor acties naar buiten, zoals berichten versturen, publiceren, kopen of verwijderen, maar controleer zelf wat de AI doet en geef hem alleen toegang tot de map die nodig is.</p>
         </div>
 
-        <details class="prompt-voorbeeld">
-          <summary>Lees de volledige prompt</summary>
-          <pre id="prompt-tekst">De prompt wordt geladen...</pre>
-        </details>
       </div>
     </main>
   </div>
   <script src="script.js?v=3"></script>
   <script>
     (function () {
-      var BRON = 'downloads/2nd-brain-prompt.md';
-      var knop = document.getElementById('kopieer-knop');
-      var status = document.getElementById('kopieer-status');
-      var tekstVak = document.getElementById('prompt-tekst');
-      var cache = null;
-
-      function laad() {
-        if (cache !== null) return Promise.resolve(cache);
-        return fetch(BRON).then(function (r) {
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-          return r.text();
-        }).then(function (t) {
-          cache = t;
-          tekstVak.textContent = t;
-          return t;
-        });
-      }
-
       function kopieerNoodgreep(tekst) {
         return new Promise(function (ok, fout) {
           var ta = document.createElement('textarea');
@@ -132,17 +147,37 @@
         return kopieerNoodgreep(tekst);
       }
 
-      knop.addEventListener('click', function () {
-        status.textContent = '';
-        laad().then(kopieer).then(function () {
-          status.textContent = 'Gekopieerd. Plak hem nu in je AI-assistent.';
-        }).catch(function () {
-          status.textContent = 'Kopiëren lukte niet. Gebruik de downloadknop.';
-        });
-      });
+      Array.prototype.forEach.call(document.querySelectorAll('.prompt-blok'), function (blok) {
+        var bron = blok.getAttribute('data-bron');
+        var knop = blok.querySelector('.js-kopieer');
+        var status = blok.querySelector('.js-status');
+        var tekstVak = blok.querySelector('.js-tekst');
+        var cache = null;
 
-      laad().catch(function () {
-        tekstVak.textContent = 'De prompt kon niet worden geladen. Gebruik de downloadknop.';
+        function laad() {
+          if (cache !== null) return Promise.resolve(cache);
+          return fetch(bron).then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.text();
+          }).then(function (t) {
+            cache = t;
+            tekstVak.textContent = t;
+            return t;
+          });
+        }
+
+        knop.addEventListener('click', function () {
+          status.textContent = '';
+          laad().then(kopieer).then(function () {
+            status.textContent = 'Gekopieerd. Plak hem nu in je AI-assistent.';
+          }).catch(function () {
+            status.textContent = 'Kopiëren lukte niet. Gebruik de downloadknop.';
+          });
+        });
+
+        laad().catch(function () {
+          tekstVak.textContent = 'De prompt kon niet worden geladen. Gebruik de downloadknop.';
+        });
       });
     })();
   </script>
