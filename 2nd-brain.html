@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge 2nd brain | Circulaire Economie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=3">
+  <style>
+    .prompt-acties { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-top: 0.9rem; }
+    .prompt-status { font-size: 0.85rem; color: var(--text); }
+    .prompt-voorbeeld { margin-top: 1.5rem; }
+    .prompt-voorbeeld summary { cursor: pointer; font-weight: 600; }
+    .prompt-voorbeeld pre {
+      margin: 0.9rem 0 0;
+      max-height: 28rem;
+      overflow: auto;
+      padding: 1rem 1.25rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      background: var(--vlak);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="sidebar-overlay" onclick="toggleMenu()"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="sidebar-brand"><span class="brand-title">Circulaire Economie</span></div></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <div class="nav-section-title">Start</div>
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="planning.html" class="nav-link">Planning</a>
+          <a href="werkwijze.html" class="nav-link">Werkwijze</a>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Bronnen</div><a href="challenge.html" class="nav-link">Challenge Python</a><a href="2nd-brain.html" class="nav-link active">Challenge 2nd brain</a><a href="materialen.html" class="nav-link">Materialen</a><a href="learnings.html" class="nav-link">Learnings</a><a href="game.html" class="nav-link">Learning game</a></div>
+      </nav>
+      <div class="sidebar-footer">Studiemateriaal</div>
+    </aside>
+    <main class="main">
+      <header class="main-header"><button class="mobile-menu-btn" onclick="toggleMenu()">&#9776;</button><h1 class="page-title">Challenge 2nd brain</h1></header>
+      <div class="main-content">
+        <p class="lead">
+          Bouw je eigen AI second brain. Je geeft de prompt hieronder aan een AI-assistent en die interviewt je over wat je weet, hoe je werkt en hoe je beslissingen neemt. Wat je antwoordt wordt vastgelegd in een set Markdown-bestanden die je in latere gesprekken weer aan een AI kunt meegeven.
+        </p>
+
+        <h2 id="prompt">De prompt</h2>
+        <p class="section-intro">Kopieer de prompt of download hem als bestand. Het is dezelfde tekst.</p>
+        <div class="download-list">
+          <div class="download-card">
+            <div>
+              <h3>2nd brain prompt</h3>
+              <p>Deep Knowledge Interviewer &amp; Memory Architect. Werkt in Claude, ChatGPT en vergelijkbare AI-assistenten, met stem of tekst.</p>
+              <div class="prompt-acties">
+                <button type="button" class="btn btn-outline" id="kopieer-knop">Kopieer prompt</button>
+                <span class="prompt-status" id="kopieer-status" role="status" aria-live="polite"></span>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="downloads/2nd-brain-prompt.md" download="2nd brain prompt.md">Download</a>
+          </div>
+        </div>
+
+        <h2 id="gebruik">Zo gebruik je hem</h2>
+        <ol>
+          <li>Open een nieuw gesprek in de AI-assistent die je wilt gebruiken.</li>
+          <li>Plak de prompt als eerste bericht en verstuur hem.</li>
+          <li>De AI vraagt in welke taal je wilt werken en begint daarna met je studie- of werkcontext. Je beantwoordt één vraag per keer.</li>
+          <li>Je mag vragen overslaan, een interpretatie corrigeren of pauzeren en later verdergaan.</li>
+          <li>Laat de AI de bestanden aanmaken, of de inhoud geven zodat je ze zelf opslaat. Bewaar ze op een plek die je zelf beheert.</li>
+        </ol>
+
+        <div class="callout callout-primary">
+          <p><strong>Let op:</strong> een AI onthoudt de bestanden pas in een volgend gesprek als je ze weer meegeeft of koppelt. Deel geen wachtwoorden en anonimiseer vertrouwelijke informatie van opdrachtgevers voordat je die deelt.</p>
+        </div>
+
+        <details class="prompt-voorbeeld">
+          <summary>Lees de volledige prompt</summary>
+          <pre id="prompt-tekst">De prompt wordt geladen...</pre>
+        </details>
+      </div>
+    </main>
+  </div>
+  <script src="script.js?v=3"></script>
+  <script>
+    (function () {
+      var BRON = 'downloads/2nd-brain-prompt.md';
+      var knop = document.getElementById('kopieer-knop');
+      var status = document.getElementById('kopieer-status');
+      var tekstVak = document.getElementById('prompt-tekst');
+      var cache = null;
+
+      function laad() {
+        if (cache !== null) return Promise.resolve(cache);
+        return fetch(BRON).then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.text();
+        }).then(function (t) {
+          cache = t;
+          tekstVak.textContent = t;
+          return t;
+        });
+      }
+
+      function kopieerNoodgreep(tekst) {
+        return new Promise(function (ok, fout) {
+          var ta = document.createElement('textarea');
+          ta.value = tekst;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy') ? ok() : fout(new Error('copy')); }
+          catch (e) { fout(e); }
+          document.body.removeChild(ta);
+        });
+      }
+
+      function kopieer(tekst) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(tekst).catch(function () {
+            return kopieerNoodgreep(tekst);
+          });
+        }
+        return kopieerNoodgreep(tekst);
+      }
+
+      knop.addEventListener('click', function () {
+        status.textContent = '';
+        laad().then(kopieer).then(function () {
+          status.textContent = 'Gekopieerd. Plak hem nu in je AI-assistent.';
+        }).catch(function () {
+          status.textContent = 'Kopiëren lukte niet. Gebruik de downloadknop.';
+        });
+      });
+
+      laad().catch(function () {
+        tekstVak.textContent = 'De prompt kon niet worden geladen. Gebruik de downloadknop.';
+      });
+    })();
+  </script>
+</body>
+</html>
