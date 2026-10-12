@@ -83,7 +83,7 @@
         </ol>
 
         <h2 id="inzetten">Stap 2 &middot; Zet je second brain aan het werk</h2>
-        <p class="section-intro">Dit is de utilization prompt. Hij is bedoeld voor een omgeving die bij je bestanden kan en zelf taken kan uitvoeren: Claude Cowork, ChatGPT in werk- of agentmodus, Codex of Claude Code.</p>
+        <p class="section-intro">Dit is de utilization prompt. Gebruik hem niet kaal: pas hem eerst aan op jezelf en laad hem daarna als instructies in een project. Zo staat hij vast voor elk gesprek en hoef je hem niet steeds opnieuw te plakken. Hij is bedoeld voor een omgeving die bij je bestanden kan en zelf taken kan uitvoeren: Claude Cowork, ChatGPT in werk- of agentmodus, Codex of Claude Code.</p>
         <section class="prompt-blok" data-bron="downloads/2nd-brain-utilization-prompt.md">
           <div class="download-list">
             <div class="download-card">
@@ -104,13 +104,30 @@
           </details>
         </section>
 
-        <h3>Zo gebruik je hem</h3>
+        <h3>1. Personaliseer de prompt</h3>
+        <p>Download het bestand en open het in een teksteditor. De prompt is algemeen geschreven. Maak hem van jou door in elk geval deze onderdelen te controleren en aan te passen:</p>
+        <ul>
+          <li><strong>Taal en toon:</strong> zet bovenaan één of twee regels over in welke taal de AI moet antwoorden en hoe hij moet schrijven.</li>
+          <li><strong>Sectie 2, mapstructuur:</strong> laat de mapnamen kloppen met je eigen second brain.</li>
+          <li><strong>Sectie 5, standaardmodus:</strong> kies of de AI standaard adviseert (Assist), meewerkt (Proactive) of zelfstandig projecten uitvoert (Autonomous).</li>
+          <li><strong>Sectie 11, wat mag de AI zelf:</strong> bepaal welke acties hij zelf mag doen en waarvoor hij eerst toestemming vraagt. Maak dit strenger als dat bij je past.</li>
+          <li><strong>Sectie 15 en 16, startgedrag en commando's:</strong> pas het rapportageformaat aan en voeg je eigen commando's toe, bijvoorbeeld in het Nederlands.</li>
+          <li><strong>Je huidige focus:</strong> voeg onderaan een korte alinea toe over de projecten of doelen waar de AI de komende weken prioriteit aan moet geven.</li>
+        </ul>
+
+        <h3>2. Laad hem in een project</h3>
         <ol>
-          <li>Open de tool en geef hem toegang tot je map <code>AI-Second-Brain</code>. Zonder toegang tot de bestanden kan de AI niets uit je second brain lezen.</li>
-          <li>Plak de prompt als eerste bericht en verstuur hem.</li>
-          <li>De AI leest je second brain, kiest een eerste nuttige taak en rapporteert wat hij heeft gedaan en wat hij voorstelt.</li>
+          <li>Maak in je tool een nieuw project aan, bijvoorbeeld met de naam "Second brain".</li>
+          <li>Plak je aangepaste prompt bij de instructies van het project. In Claude Code zet je hem in <code>CLAUDE.md</code> en in Codex in <code>AGENTS.md</code>, in de map van je second brain.</li>
+          <li>Geef het project toegang tot je map <code>AI-Second-Brain</code>, via koppelen of door de bestanden toe te voegen. Zonder toegang tot de bestanden kan de AI niets uit je second brain lezen.</li>
+        </ol>
+
+        <h3>3. Werk ermee</h3>
+        <ol>
+          <li>Open een nieuw gesprek binnen het project. De AI leest je second brain, kiest een eerste nuttige taak en rapporteert wat hij heeft gedaan en wat hij voorstelt.</li>
           <li>Stuur daarna aan met korte opdrachten, zoals "Wat kan ik nu doen?", "Do research", "Work autonomously" of "Stop".</li>
           <li>De AI houdt in <code>05_OPERATIONS</code> een backlog en een logboek bij, zodat je in een volgende sessie kunt verdergaan.</li>
+          <li>Pas de projectinstructies aan zodra je merkt dat de AI iets steeds anders doet dan je wilt.</li>
         </ol>
 
         <div class="callout callout-primary">
